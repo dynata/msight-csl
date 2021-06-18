@@ -67,8 +67,7 @@ Hello, World and Basic Usage
 ==========================================
 
 
-.. code-block:: python
-   :linenos:
+.. code-block:: bash
 
 
    # Import the MarketSight API Client
@@ -82,8 +81,7 @@ Hello, World and Basic Usage
 ================================
 
 
-.. code-block:: python
-   :linenos:
+.. code-block:: bash
 
     # Initialize the MarketSight API Client.
     api = marketsight.client("https://application.marketsight.com/api/v1/swagger/public.json")
@@ -100,9 +98,7 @@ Hello, World and Basic Usage
 Execute API calls to perform operations, for example:
 
 
-.. code-block:: python
-  :linenos:
-
+.. code-block:: bash
 
   # Retrieve an Account
   account = api.Accounts.retrieve(account_id = "MY ACCOUNT ID GOES HERE")
