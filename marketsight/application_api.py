@@ -1066,7 +1066,6 @@ def client(
     """
     spec_dict = None
     cache_dir = pathlib.Path() / '.marketsight'
-    cache_dir.mkdir(exist_ok=True)
 
     if openapi_url is None:
         openapi_url = OPENAPI_URL
@@ -1075,6 +1074,7 @@ def client(
         spec_dict = openapi_dict
 
     if spec_dict is None:
+        cache_dir.mkdir(exist_ok=True)
         openapi_url = validators.url(openapi_url, allow_empty = False)
         response = requests.head(
             url=openapi_url,
