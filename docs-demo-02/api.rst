@@ -178,7 +178,7 @@ Accounts
                
           # Example of usage
 
-          account = api.Accounts.retrieve(account_id="24199684c4bb41f78ba81a745724e8b6")
+          account = api.Accounts.retrieve(account_id="898cece6ace04e7e9864a0940c629d55")
 
           print(account.id)
           print(account.name),
@@ -187,7 +187,7 @@ Accounts
           # or just
 
           print(
-              api.Accounts.retrieve("24199684c4bb41f78ba81a745724e8b6").name
+              api.Accounts.retrieve("898cece6ace04e7e9864a0940c629d55").name
           )
           
     
@@ -224,7 +224,7 @@ Accounts
                
           # Example of usage
           account = api.Accounts.modify(
-              account_id="e70b455aab35439eacd0cc5ebffa1495",
+              account_id="d226abb31a484e5d847495b7741a38cb",
               model={
                   "name": "new name of account",
               }
@@ -268,7 +268,7 @@ Accounts
                
           # Example: Works with `cmix` type partners only
           token = api.Accounts.get_user_tokens(
-              user_id="251a407027a8465eb437afc9971422fd"
+              user_id="66902d4b0bcd4555b6b9b07fe221b3bc"
           )
           print(tokens.access_token)
           print(tokens.refresh_token)
@@ -314,7 +314,7 @@ Accounts
           # Example
           import uuid
 
-          cmix_account = "7485fe2e528b4c3083fef2eedc2407db"
+          cmix_account = "ac26971281c545bc9c1b553677d70a27"
           access_token = str(uuid.uuid4())
           refresh_token = str(uuid.uuid4())
 
@@ -364,7 +364,7 @@ Accounts
           from bravado.exception import HTTPNotFound
 
           # Check that tokens exists
-          user_id="266adfc3b6ab4b9ca4362e7622d1be35"
+          user_id="7348db0deb6b4a8fb69d0e881eff574b"
           tokens = api.Accounts.get_user_tokens(user_id=<user_id)
           if tokens:
               api.Accounts.delete_user_tokens(user_id=user_id)
@@ -554,6 +554,9 @@ Advanced_Analytics
       
       
       
+      :rtype: `AsyncResult`_
+      
+      
 
     
 
@@ -669,6 +672,9 @@ Advanced_Analytics
       
       
       
+      :rtype: `AsyncResult`_
+      
+      
 
     
 
@@ -720,6 +726,9 @@ Advanced_Analytics
       
 
       
+      
+      
+      :rtype: `AsyncResult`_
       
       
 
@@ -784,12 +793,12 @@ Charts
                
           # Example 1: getting all chart nme from the dataset
 
-           for chart in api.Charts.list(dataset_id="7eb65c907da5458eb81808a9be2f2629").items:
+           for chart in api.Charts.list(dataset_id="da6355f5b2c340ccb741a8ba558084f8").items:
               print(chart.id)
               print(chart.name)
 
           # Example 2: check if chart with name `some name` exists in the dataset
-           if api.Charts.list(dataset_id="7eb65c907da5458eb81808a9be2f2629", name="some name").items:
+           if api.Charts.list(dataset_id="da6355f5b2c340ccb741a8ba558084f8", name="some name").items:
               # Do something here
               pass
           
@@ -861,7 +870,7 @@ Charts
                
           # Example
           updated_chart = api.Charts.modify(
-              chart_id="57f5021578324d7b8613ab12430863cd",
+              chart_id="858faf47655d46259b2e34993bd3ed8e",
               model={"description": "Some description"}
           )
           print(updated_chart.description)
@@ -905,7 +914,7 @@ Charts
 
                
           # Example
-          chart = api.Charts.retrieve(chart_id="0488ac535117440981268aed4bb139c3")
+          chart = api.Charts.retrieve(chart_id="08760ee4c25d4abdb6d9d0027a8bbd4b")
 
           # do some changes with the chart
           chart.description = "NEW DESCRIPTION"
@@ -1017,7 +1026,7 @@ Charts
 
                
           # Example
-          definition = api.Charts.get_definition(chart_id="4c8c368e056443f9b8bc3c04e04910af")
+          definition = api.Charts.get_definition(chart_id="b2ef407c54d84a8c909c1df28c3ebdd2")
 
           
     
@@ -1056,7 +1065,7 @@ Charts
 
                
           # Example
-          definition = api.Charts.get_definition(chart_id="612990be4fc24a59a88b3d3ee2b3539f")
+          definition = api.Charts.get_definition(chart_id="e18f293ad56b4f0e8045093c1097a5e5")
           
     
 
@@ -1145,7 +1154,7 @@ Crosstabs
 
                
           Example:
-          crosstabs = api.Crosstabs.list(dataset_id="fbdf4c4503534db085960e87248b16d6").items
+          crosstabs = api.Crosstabs.list(dataset_id="809fac1f1aeb4228adde421f9b331ba2").items
           for crostab in crosstabs:
               print(crosstab.id)
               print(crosstab.name)
@@ -1189,7 +1198,7 @@ Crosstabs
 
           # copy definition
           definition = api.Crosstabs.get_definition(
-              crosstab_id="6a691672357e472aa09aa42f4b132a81"
+              crosstab_id="0fa2d51e00864108bfa91b56efe7fb1e"
           )
           # build new model
           model =  model = {
@@ -1200,7 +1209,7 @@ Crosstabs
               "category": "Demographics",
           }
           crosstab = api.Crosstabs.create(
-              dataset_id="edb1ac6ff1d24265b5f8a603abfaa843",
+              dataset_id="7e20e80d81314096815a0f485e7760d8",
               model=model
           )
 
@@ -1247,7 +1256,7 @@ Crosstabs
                
           # Example: change crosstab's description
           crosstab = api.Crosstabs.modify(
-              crosstab_id="77a16869135e4398afc2577ecdad0b44",
+              crosstab_id="a73bcd9e9bf241419b6ed31e3a9ca4c9",
               model={"description": "new description"}
           )
 
@@ -1324,9 +1333,9 @@ Crosstabs
                
           # Example
           async_job = api.Crosstabs.delete(
-              account_id="7f52d4c385c749baab5c777385ce007f",
-              dataset_id="5a04875c659744dd9a8a7cedf48f7e45",
-              crosstab_id="4cee9c5804724c0db2eed452eadc7a1d"
+              account_id="a9f6e529b1c94db38bed3b642a8891e7",
+              dataset_id="990e9d03a826463f98f18e0def5513dd",
+              crosstab_id="0a93f74a72824c41a5c85ed226ef336e"
           )
           # Wait until job will be done (job.result should be "succeeded")
           job = api.helper.wait_until(
@@ -1373,7 +1382,7 @@ Crosstabs
 
                
           # Example
-           crosstab = api.Crosstabs.retrieve(crosstab_id="5ceccd535ba64ec6b3d807cbcb3024dc")
+           crosstab = api.Crosstabs.retrieve(crosstab_id="7c8a0342e4b64648a9e644665b827fff")
            print(crosstab.id)
            print(crosstab.name)
 
@@ -1415,7 +1424,7 @@ Crosstabs
                
           # Example:
           definition = api.Crosstabs.get_definition(
-              crosstab_id="4b0092659f1f4426a3dc281c42ba6ea6"
+              crosstab_id="0903f75a084444e3a08305ae2ffa6ee0"
           )
           print (definition.description)
           
@@ -1459,7 +1468,7 @@ Crosstabs
                
           # Example: Change `includeEmpty` attribute to opposite value
 
-          crosstab_id = "a5001ca4cf104047b96a4d5ec2019c13"
+          crosstab_id = "8d75849cfd0748eebf28679c06ab0790"
 
           definition = api.Crosstabs.get_definition(
               crosstab_id=crosstab_id
@@ -1576,7 +1585,7 @@ Crosstabs
           # example 1: get result asynchronously
 
           async_job = api.Crosstabs.calculate(
-              crosstab_id="365195eefb3344cd89035323ba48793a",
+              crosstab_id="acbdcede9e4d48be95efcb837962752d",
               model={
                   "format": "json",
                   "preferSync": False
@@ -1649,7 +1658,7 @@ Dashboards
 
                
           # Example
-          for dashboard in api.Dashboards.list(account_id="fcc3769b37c94382bc881c9e8ee03b80").items:
+          for dashboard in api.Dashboards.list(account_id="9ec54130a549463a8d85b62a7f7358a9").items:
               print(dashboard.name)
           
     
@@ -1709,7 +1718,7 @@ Dashboards
          :linenos:
 
                
-          dashboard = api.Dashboards.retrieve(dashboard_id="adcbc27159a940d4bc2fab822b999cf9")
+          dashboard = api.Dashboards.retrieve(dashboard_id="b1e8cd56eae9469ca90247ea1a457a16")
           print(dashboard.name)
           
     
@@ -1798,7 +1807,7 @@ Dashboards
 
                
           # Example: delete all dashboards in account
-          api.Dashboards.delete(dashboard_id="33a6fe8859484acd921d97c0a7694cad")
+          api.Dashboards.delete(dashboard_id="30c2f30d36b14f32880b57d1b2fcd86f")
           
     
 
@@ -1885,6 +1894,31 @@ Dashboards
 
   
 
+    .. py:method:: get_datasets(account_id, dashboard_id)
+
+      Retrieve dashboard datasets.
+
+      
+
+      
+      :param account_id: MarketSight account ID.
+      :type account_id: str
+      
+      :param dashboard_id: 
+      :type dashboard_id: str
+      
+
+      
+      
+      
+      :rtype: `DashboardDatasets`_
+      
+      
+
+    
+
+  
+
     .. py:method:: copy(account_id, dashboard_id)
 
       Duplicate a dashboard.
@@ -1916,7 +1950,7 @@ Dashboards
 
                
           # Example
-          async_res = api.Dashboards.copy(dashboard_id="1248f171b61740d6aa2e5c8fea0557ea")
+          async_res = api.Dashboards.copy(dashboard_id="dd3b7dfc8b374ff4b6835aec11834306")
 
           # wait until job will be completed
           job = api.helper.wait_until(
@@ -2017,7 +2051,7 @@ Data_Sources
 
                
           # print all available `DataSource`_ for account
-          for ds in api.Data_Sources.list(account_id="d950b689333046fab0efb0821109a939").items:
+          for ds in api.Data_Sources.list(account_id="531bf5d0889d40c7a950b4edd5bad8b2").items:
               print(ds.id, ds.description)
           
     
@@ -2057,7 +2091,7 @@ Data_Sources
           ds = api.Data_Sources.create(
               account_id="-",
               model= {
-                  "account": "bfb4147d11a1478695b2ae86f2bcbd83",
+                  "account": "3e4478342c9c48efba0e81bf7b5b9e3c",
                   "name": "Example name:Data_Sources.create",
                   "description": "Example description:Data_Sources.create",
                   "enabled": True,
@@ -2102,7 +2136,7 @@ Data_Sources
          :linenos:
 
                
-          ds = api.Data_Sources.retrieve(data_source_id="859e16999c1e44e186fe055c24fb9a91")
+          ds = api.Data_Sources.retrieve(data_source_id="a8e78005c00b4958b56daa42880840a8")
           print(ds.description)
           
     
@@ -2163,10 +2197,10 @@ Data_Sources
 
                
           #  Example 1: of deleting
-          api.Data_Sources.delete(account_id="-", data_source_id="c153abd62c1049c294ebc0743d034cd5")
+          api.Data_Sources.delete(account_id="-", data_source_id="9cb1c26e29d34f178079c362bdfaaf6b")
 
           # Example2: Remove all DataSources from account
-          for ds in api.Data_Sources.list("77f6e8f2d9794953b32104e01153d8b6").items:
+          for ds in api.Data_Sources.list("089a2a033b514f13899aef3c2c2e5921").items:
               api.Data_Sources.delete(data_source_id=ds.id)
           
     
@@ -2221,7 +2255,7 @@ Data_Views
 
                
           # Example: get all `DataViews` available for `DataSet`
-          for dv in api.Data_Views.list(dataset_id="2af82472454c490b917614aae1fb5f1f").items:
+          for dv in api.Data_Views.list(dataset_id="9b89341f92b747ac91d924da22eccfd4").items:
               print(dv)
           
     
@@ -2317,7 +2351,7 @@ Data_Views
          :linenos:
 
                
-          data_view =  api.Data_Views.retrieve(dataview_id="e0f1b50970714c3ea87d764b67616559")
+          data_view =  api.Data_Views.retrieve(dataview_id="fe95f82ed2134fdd87d4e94cf92cc015")
           print(data_view)
           
     
@@ -2361,7 +2395,7 @@ Data_Views
           Example: Update description only
 
           updated_data_view = api.Data_Views.modify(
-              dataview_id="f66018ab95384bc2926086ced9171602",
+              dataview_id="7a842c00f80a45a29557dff8d0f007d1",
               model: {"description": "TEST_DESCRIPTION"}
           )
 
@@ -2407,7 +2441,7 @@ Data_Views
 
                
           # Example: Update the description but send all information about the
-          data_view_id="9e8419235d1b47ccb122925cfa2bce32"
+          data_view_id="f0c4b0455d1a4482bb05c5e46a93ffb7"
 
           dv = api.Data_Views.retrieve(dataview_id=data_view_id)
 
@@ -2456,7 +2490,7 @@ Data_Views
 
                
           # Example: get all DataDiews definitions for particular DataSet
-          for data_view in api.Data_Views.list(dataset_id="b8f903b4d0e94411a201af7f07196576").items:
+          for data_view in api.Data_Views.list(dataset_id="69115c3935f848b4955e4a4521d984be").items:
                definition = api.Data_Views.get_definition(
                   dataview_id=data_view.id
                )
@@ -2571,7 +2605,7 @@ Data_Views
           import pathlib
 
           async_job = api.Data_Views.export(
-              dataview_id="ed63e72a1a324592b2c45b9721b2c96c",
+              dataview_id="bf2708b6450444f0a3db5127087f9e8e",
               model={
                   "format": "excel",
                   "preferSync": False,
@@ -2662,7 +2696,7 @@ Datasets
            _async_job = api.Datasets.create(
               model=dict(
                   folderPath=["test_folder", "sub_folder"],
-                  account="945a9c3031f44fa99c084598eac0749a",
+                  account="ca24bfb6b8df43e18f9ecbf00ac79f20",
               ),
               data=open("data_file.csv", "rb"),
            )
@@ -2698,7 +2732,7 @@ Datasets
          :linenos:
 
                
-          for ds in api.Datasets.list(account_id="014dbc36ce7b458c8eec62c1598f0359").items:
+          for ds in api.Datasets.list(account_id="80b2d56cd4694151b35490ff4d11aa05").items:
               print (ds.id)
               print (ds.name)
           
@@ -2734,7 +2768,7 @@ Datasets
          :linenos:
 
                
-          data_set = api.Datasets.retrieve(dataset_id="c1f96182bdf34a02bfc58037d9b706c9")
+          data_set = api.Datasets.retrieve(dataset_id="df3fb53f1f964da1bed8ee51df97adeb")
           print(data_set.id)
           print(data_set.name)
           
@@ -2785,7 +2819,7 @@ Datasets
 
                
           # Example move `DataSet` into new folder
-          dataset_id = "35e80204da104fc48607df0b7b0fee50"
+          dataset_id = "d293f9cd374d41b68903b331bc45f2d4"
           data_set = api.Datasets.modify(
               dataset_id=dataset_id,
               model={"folderPath": ["new folder", ["new sub-folder"]]}
@@ -2836,7 +2870,7 @@ Datasets
 
                
           # Examples
-          dataset_id="fa6a92f838f34b3ebb1791eb25f2945a"
+          dataset_id="ffe902918c6243de97c2e6be4bdc6a49"
 
           dataset = api.Datasets.retrieve(dataset_id=dataset_id)
           dataset.description = "modified description"
@@ -2882,7 +2916,7 @@ Datasets
 
                
           # Example
-          async_job = api.Datasets.delete(dataset_id="012849b868ef47748033b2417b3d4b4a")
+          async_job = api.Datasets.delete(dataset_id="bd5b9c256aa240779346b158e11c7e50")
           
     
 
@@ -2921,11 +2955,11 @@ Datasets
          :linenos:
 
                
-          destination_account_id = "58a036e6c3984ac4b57f740c445d58fc"
+          destination_account_id = "1bdb51fc5ae44656bd8167a354e63557"
 
           async_job = api.Datasets.copy(
               account_id="-",
-              dataset_id="9dba5bd90e8148d38ffdd07ac6a29d8d",
+              dataset_id="39d51f95aef74a1f94dc640246aaa703",
               model={
                   "destinationAccount": destination_account_id,
                   "folderPath": ["test", "dataset_copies"],
@@ -3073,7 +3107,7 @@ Datasets
          :linenos:
 
                
-          permissions = api.Datasets.get_permissions(dataset_id="951ee29dbf214fd3b2ff38e49651bdd8")
+          permissions = api.Datasets.get_permissions(dataset_id="93a2c61abcb54fd6be48f186b2b14b06")
           print(permissions)
           
     
@@ -3112,11 +3146,11 @@ Datasets
 
                
           # Example
-           new_owner = "d6cded52d44b46bab1d59fc08f2b9e1d"
-           dataset_id = "2426d379345f4b2096c54a5018c204df"
+           new_owner = "2f61dfca4a2847edb4fca3ea83f908e9"
+           dataset_id = "7983f885052d4f768023df042473a23a"
 
             result = api.Datasets.patch_permissions(
-              dataset_id="2426d379345f4b2096c54a5018c204df",
+              dataset_id="7983f885052d4f768023df042473a23a",
               model={"owner": user.id}
           )
 
@@ -3157,8 +3191,8 @@ Datasets
 
                
           # Example
-           new_owner = "529d6bdbae90426ab7a50e94a6ca11f0"
-           dataset_id = "af30296c87bf4cd9a7ee9654243f4a42"
+           new_owner = "dce62f9856f64bf5bcd67d2091618efc"
+           dataset_id = "b03f18a1d88543d5ac7f875af3aafa27"
 
            result = api.Datasets.put_permissions(
               account_id=account,
@@ -3277,8 +3311,8 @@ Datasets
 
                
           api.Datasets.delete_group_permission(
-              dataset_id="0cf73adac42142cd951547cedf80849a",
-              group_id="176af584c8504e3fa7bc68d0977f3f20"
+              dataset_id="9ffe3e4f3575408bbf189de673ac0121",
+              group_id="f84587abf1074a62afec81ca77937ba8"
           )
           
     
@@ -3347,7 +3381,7 @@ Datasets
           # Example
           import random
 
-          dataset_id = "f746dafef0d14dce8df7de9fae7a71ce"
+          dataset_id = "040416a6fac848f3bf19eeb3465db3fa"
 
           # Getting random  user (associated with the current partner)
           assocs = api.Partners.get_user_associations(partner_id=client_id)
@@ -3461,7 +3495,7 @@ Datasets
 
                
           # Check that dataset is in status `ready`
-          dataset_id = "65b52de7ccab4d23a1e02f9cb10a9424"
+          dataset_id = "2780c0c6e1464c1588da0401b796cb2a"
           if api.Datasets.retrieve(dataset_id=dataset_id).status == 'ready':
               async_job = api.Datasets.export(dataset_id=dataset_id)
 
@@ -3581,7 +3615,7 @@ Datasets
 
                
           # Example
-          result = api.Datasets.get_messages(dataset_id="6e9692f9ca1341ca9d4cc220e4f097a4")
+          result = api.Datasets.get_messages(dataset_id="1977284b71984141a53655128181451b")
           print(result)
           
     
@@ -3614,7 +3648,7 @@ Datasets
 
                
           # Example
-          metadata= api.Datasets.get_metadata(dataset_id="453c719cf3ac4f5f9f297476b4d73407")
+          metadata= api.Datasets.get_metadata(dataset_id="01a9f8d559464fa59e32f34b73f4c9a0")
           print(metadata)
           
     
@@ -3706,7 +3740,7 @@ Files
           model = dict(
               folderPath=["uploaded"],
               name="Uploaded file",
-              account="57bff2ab4bdd4ff39947b81f9c3312e4",
+              account="d1766c0e20c842f5bc46fc67292f0ee1",
               description="Some file description",
           )
 
@@ -3751,7 +3785,7 @@ Files
                
           # Example:
 
-          file =  api.Files.retrieve(file_id="52abe24280ed41659e2e303f7d84ad24")
+          file =  api.Files.retrieve(file_id="a7c27d932b714711b59fa68e3f7f4198")
 
           print(file.id)
           print(file.description)
@@ -3786,21 +3820,21 @@ Files
 
                
 
-         # Example:
-         # Uploading file
-          file = api.Files.create(
-              model=dict(
-                  folderPath=["test"],
-                  name="Some file name",
-                  account="8447f4c9b1b8485eb2252856a430e184",
-                  description="Some file description",
-              ),
-              data=open("some_file.txt", "rb"),
-          )
+          # Example:
+          # Uploading file
+           file = api.Files.create(
+               model=dict(
+                   folderPath=["test"],
+                   name="Some file name",
+                   account="79548464bece4d98b291ba1f820349fd",
+                   description="Some file description",
+               ),
+               data=open("some_file.txt", "rb"),
+           )
 
-          # delete previously uploaded file
+           # delete previously uploaded file
 
-          api.Files.delete(file_id=file.id)
+           api.Files.delete(file_id=file.id)
           
     
 
@@ -3841,7 +3875,7 @@ Files
 
                
            file = api.Files.modify(
-              file_id="c5b1307edac346699e84e856ec400dfb",
+              file_id="ce3837d41db64f32b129f5c57cd47ad9",
               model={"name": "new file name"}
           )
 
@@ -3905,7 +3939,7 @@ Files
                
           # Example:
 
-          async_job = api.Files.copy(file_id="357bfa702eaa4f209ac459a6f7429f13")
+          async_job = api.Files.copy(file_id="3a29abace03e4c2a93b6d16d0cacb648")
 
           # Wait until job.result will return "succeeded"
 
@@ -3952,7 +3986,7 @@ Files
 
                
           # Example
-          permissions = api.Files.get_permissions(file_id="10c6d98c553c4a5bbf4104e05b3bffd1")
+          permissions = api.Files.get_permissions(file_id="77d43166f1b94749ab389055a762b099")
           print(permissions)
           
     
@@ -4075,7 +4109,7 @@ Files
 
                
           # Example: Will change the `full` permission to `view` for some group
-          file_id = "dbec160f0463416dae1775ee7e9e9c58"
+          file_id = "fcdc9d80022b4e7b9aae12f9fdbd7364"
            group_permissions = api.Files.get_group_permissions(
               file_id=file.id
           )
@@ -5158,12 +5192,12 @@ Partners
           # Example 1: get partner to account associations by  external_id of account
           result = api.Partners.get_account_associations(
               partner_id="-",
-              externalAccount="a2c9918c82284a249338e4f6a4c027e9"
+              externalAccount="80981a8252ee4968a1f050378215ae65"
           )
           print (result.items)
 
           # Example 2: get all accounts associated with the partner
-          result = api.Partners.get_account_associations(partner_id="8e64ab0d01f845188208e0ec0fd9d2e4")
+          result = api.Partners.get_account_associations(partner_id="51d4e0848f1f494abddd4c26a68f02a4")
           for item in result.items:
               print (item.account)
           
@@ -5202,8 +5236,8 @@ Partners
           # Example:
 
           assoc = api.Partners.get_account_association(
-              partner_id="a38e5a0abb444c4d8c3b02f329c7e6ce",
-              account_id="f9cd37bc6e2b4f6bbc594c15e663af48"
+              partner_id="fefb2ebfd548478fb462b873f777ba51",
+              account_id="38446349fa674b4bab15159e26b932b7"
           )
           print (assoc)
           
@@ -5402,7 +5436,7 @@ Partners
 
           for user in api.Users.list(account_id=account).items:
               association = api.Partners.get_user_association(
-                  partner_id="0c1e645c0fa548ab8b7eabf1dfcb5a4a",
+                  partner_id="e2950d2a60444325ad28148da7f0b5c6",
                   user_id=user.id
               )
               print(f"user_id={user.id}, externalId={association.externalId}")
@@ -5494,8 +5528,8 @@ Partners
                
           # Example
           api.Partners.delete_user_association(
-              partner_id="182689d96e82416f97422e6762deab71",
-              user_id="38760074cfb34380994dc21827509ab1"
+              partner_id="ec386f8dee644012bbf8c685c1ae6c72",
+              user_id="6688a5961f554d1b8d29728806b0788c"
           )
           
     
@@ -5689,12 +5723,12 @@ Users
 
                
           # Example
-          for user in api.Users.list(account_id="530866fb0f7446dca9daf8057818bd36").items:
+          for user in api.Users.list(account_id="430292699c974135a490ca1e4480bf5d").items:
               print(user.firstName, user.email)
 
           # Find user by username or Email
           result = api.Users.list(
-              account_id="530866fb0f7446dca9daf8057818bd36",
+              account_id="430292699c974135a490ca1e4480bf5d",
               usernameOrEmail="some@email.com",
           )
           if result.count > 0:
@@ -5703,7 +5737,7 @@ Users
 
           # find user by `username` only
             result = api.Users.list(
-              account_id="530866fb0f7446dca9daf8057818bd36", username="test_username"
+              account_id="430292699c974135a490ca1e4480bf5d", username="test_username"
           )
           if result.items:
               user = result.items[0]
@@ -5747,7 +5781,7 @@ Users
                
           # example
           user = api.Users.create(
-              account_id="2c535d4e8c5b414e9ac4f96111ce123f",
+              account_id="206aec6d977f4cc9a05bae9ff82234a1",
               model={
                   "password": "d868701d-6c26-422d-a2cf-ae9a9af1905e",
                   "userName": "username_test",
@@ -5793,7 +5827,7 @@ Users
          :linenos:
 
                
-          user = api.Users.retrieve(user_id="ebd7f220f2024c71823cd6f1875d0aeb")
+          user = api.Users.retrieve(user_id="24d511e29e404cceb84d78e0e9a8f9a3")
           print(user.id, user.firstName, user.email)
           
     
@@ -5832,7 +5866,7 @@ Users
 
                
           # Example 1: update first name for user
-          user_id = "3c440de2078340d1baadd27cee6506d2"
+          user_id = "fdb0e58b35914cb98667e8fe3c6d9054"
           user = api.Users.retrieve(user_id=user_id)
           user.firstName = "NewFistName"
 
@@ -5877,7 +5911,7 @@ Users
           # Getting all administered account(s) for some user
           print (
               api.Users.get_administered_accounts(
-                  user_id="d220bb6f2bb741b0845712267966187c"
+                  user_id="f2ad3e3a465c4fd0a4df0c97110e1697"
               ).items
           )
           
@@ -5916,7 +5950,7 @@ Users
           # Getting all administered account(s) for some user
           print (
               api.Users.get_administered_accounts(
-                  user_id="b35eb180409e46978fa2b2460ca83d4f"
+                  user_id="88102fa4b23243cb8f765e46cb95c874"
               ).items
           )
           
@@ -6099,7 +6133,7 @@ Variables
                
           # Example
           for category in api.Variables.get_categories(
-              dataset_id="23d06ff69b0d4a07b29955aa0bfe763e"
+              dataset_id="c027790cebb641448709767ed979baf8"
           ).items:
               print(
                   category.id,
@@ -6144,7 +6178,7 @@ Variables
 
                
           # Example
-          dataset_id="46dad16094d2478ebf63e910b3f3e827"
+          dataset_id="6a62a0ccc704464cbe96289947f0cb01"
           result = api.Variables.post_category(
               model=dict(
                   dataset=dataset_id,
@@ -6190,7 +6224,7 @@ Variables
 
           import secrets
 
-          dataset = "715d39f87ec14a5d91d3f2505c99452c"
+          dataset = "f3d89b411b44422e8663886c00a7bb59"
 
           category = api.Variables.post_category(
               model=dict(
@@ -6251,7 +6285,7 @@ Variables
                
           # Example: check if category exists with the name "test_category"
           result = api.Variables.get_category(
-              dataset_id="0a7815feb78541208a00cb5308fb272a",
+              dataset_id="285b625c151e4fab976ef4bb7f767ead",
               category_name="test_category"
           )
           if result:
@@ -6298,7 +6332,7 @@ Variables
                
           # Example: change the description and name in `test_category`
           updated_category = api.Variables.patch_category(
-              dataset_id="75c9ea3c124c46ed869ceb162e2d1bbd",
+              dataset_id="d9a3aabc50b94fc2967e741acad3825d",
               category_name="test_category",
               model=dict(
                   description="new description for category",
@@ -6374,7 +6408,7 @@ Variables
                
           # Example
           api.Variables.delete_category(
-              dataset_id="cad109c1876949ab942522113e3095d4",
+              dataset_id="e099c0e765694a6ebcffaef03744e120",
               category_name="some_test_category_name"
           )
           
@@ -6415,7 +6449,7 @@ Variables
                
           # Example: get list of variables related to `category_name`
           result = api.Variables.get_category_variables(
-              dataset_id="f5ee76ed19c0450399013759bb095eaf",
+              dataset_id="94917a2427224bc7b7645b6aebc6ca16",
               category_name="category_name"
           )
           for variable in result.items:
@@ -6455,7 +6489,7 @@ Variables
 
                
           # Example
-           for variable in api.Variables.list(dataset_id="a5d0a49a99114605b94b24690d57e39a").items:
+           for variable in api.Variables.list(dataset_id="8c445d5d1020438a9c281b596216eafc").items:
               print(variable.code)
           
     
@@ -6495,7 +6529,7 @@ Variables
                
           # Example: create variable
 
-          dataset_id="4c725580f8e04079a026bd65ddefec96"
+          dataset_id="b5f2f324950d4b6cb730ec8d99984992"
           variable = api.Variables.create(
               dataset_id=dataset_id,
               model=dict(
@@ -6548,7 +6582,7 @@ Variables
                
           # Example: remove variables with code "CSLTestVariable1", "CSLTestVariable2"
           api.Variables.delete_variables(
-              dataset_id="b0b1fea41e5c44a5b98ed35d9ef88621",
+              dataset_id="752512ea467145379ee69f089499d827",
               model=dict(variables=["CSLTestVariable1", "CSLTestVariable2"])
           )
           
@@ -6633,7 +6667,7 @@ Variables
                
           # Example
           api.Variables.delete(
-              dataset_id="fdd9f2afd50a40149e400aec204b83fa",
+              dataset_id="6ff277dcee13497db38a52a9ab5047a4",
               variable_code="ExampleVariable"
           )
           
@@ -6682,7 +6716,7 @@ Variables
                
           # Example: change the `label` of variable
           variable = api.Variables.modify(
-              dataset_id="856950e9ef3d4065baa9790d93cb6dcb",
+              dataset_id="cea0df64805f4b36bb1434b8c2d77a81",
               variable_code="CSLTestVariable",
               model={
                   'label': "new label text"
@@ -6982,7 +7016,7 @@ Variables
 
                
           #Example:
-          print (api.Variables.get_grid_sets(dataset_id="f36a7c1543cd42c6b306483e146e12d3"))
+          print (api.Variables.get_grid_sets(dataset_id="16b11160f0ca49b19282d6000a8cf8e9"))
           
     
 
@@ -8973,6 +9007,192 @@ DefinitionAnyRCommand
        - 
        - 
      
+
+  
+
+
+
+.. _AsyncResult:
+
+AsyncResult
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
+
+  
+
+  .. list-table::
+     :widths: auto
+     :header-rows: 1
+
+     * - Name
+       - Type
+       - Info
+       - Description
+     
+     * - job 
+       -   
+       - 
+       - 
+     
+
+  
+
+
+
+.. _Job:
+
+Job
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+   Information about execution of a task. 
+
+  
+
+  .. list-table::
+     :widths: auto
+     :header-rows: 1
+
+     * - Name
+       - Type
+       - Info
+       - Description
+     
+     * - result 
+       -   
+       -  required 
+       - The result of long job execution. 
+     
+     * - blobs 
+       - list  of  `JobBlob`_
+       - 
+       - 
+     
+     * - name 
+       - string  
+       - 
+       - Name of the Job 
+     
+     * - type 
+       - string  
+       - 
+       - Internal job type name 
+     
+     * - target 
+       - string  
+       - 
+       - MarketSight ID of the Target Entity 
+     
+     * - submitted 
+       - string  
+       - 
+       - Timestamp when the Job was submitted to the queue 
+     
+     * - started 
+       - string  
+       - 
+       - Timestamp when the Job was selected from the queue and processing began. 
+     
+     * - stopped 
+       - string  
+       - 
+       - Timestamp when execution of the Job ended. 
+     
+     * - progress 
+       - number  
+       -  read only 
+       - Execution Progress 
+     
+     * - object 
+       - string  
+       - 
+       - String representing the object's type. Objects of the same type share the same value. ("Job") 
+     
+     * - id 
+       - string  
+       -  read only 
+       - 
+     
+
+  
+
+
+
+.. _JobBlob:
+
+JobBlob
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+   Information about execution of a task. 
+
+  
+
+  .. list-table::
+     :widths: auto
+     :header-rows: 1
+
+     * - Name
+       - Type
+       - Info
+       - Description
+     
+     * - type 
+       -   
+       -  required 
+       - Declares the blob content type. 
+     
+     * - created 
+       - string  
+       -  required 
+       - Timestamp when the blob was created. 
+     
+     * - job 
+       - string  
+       - 
+       - MarketSight job ID. 
+     
+     * - mimeType 
+       - string  
+       - 
+       - Value to declare how an object is serialized and encoded. 
+     
+     * - name 
+       - string  
+       - 
+       - Preferable name. 
+     
+     * - object 
+       - string  
+       - 
+       - String representing the object's type. Objects of the same type share the same value. ("JobBlob") 
+     
+     * - id 
+       - string  
+       -  read only 
+       - 
+     
+
+  
+
+
+
+.. _BlobType:
+
+BlobType
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+   Enum set of values to define the blob content type. 
+
+  
+
+
+
+.. _LongJobResult:
+
+LongJobResult
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+   Enum set of values to define the result of long job execution. 
 
   
 
@@ -12584,192 +12804,6 @@ Crosstab
        -  read only 
        - 
      
-
-  
-
-
-
-.. _AsyncResult:
-
-AsyncResult
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-  
-
-  
-
-  .. list-table::
-     :widths: auto
-     :header-rows: 1
-
-     * - Name
-       - Type
-       - Info
-       - Description
-     
-     * - job 
-       -   
-       - 
-       - 
-     
-
-  
-
-
-
-.. _Job:
-
-Job
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-   Information about execution of a task. 
-
-  
-
-  .. list-table::
-     :widths: auto
-     :header-rows: 1
-
-     * - Name
-       - Type
-       - Info
-       - Description
-     
-     * - result 
-       -   
-       -  required 
-       - The result of long job execution. 
-     
-     * - blobs 
-       - list  of  `JobBlob`_
-       - 
-       - 
-     
-     * - name 
-       - string  
-       - 
-       - Name of the Job 
-     
-     * - type 
-       - string  
-       - 
-       - Internal job type name 
-     
-     * - target 
-       - string  
-       - 
-       - MarketSight ID of the Target Entity 
-     
-     * - submitted 
-       - string  
-       - 
-       - Timestamp when the Job was submitted to the queue 
-     
-     * - started 
-       - string  
-       - 
-       - Timestamp when the Job was selected from the queue and processing began. 
-     
-     * - stopped 
-       - string  
-       - 
-       - Timestamp when execution of the Job ended. 
-     
-     * - progress 
-       - number  
-       -  read only 
-       - Execution Progress 
-     
-     * - object 
-       - string  
-       - 
-       - String representing the object's type. Objects of the same type share the same value. ("Job") 
-     
-     * - id 
-       - string  
-       -  read only 
-       - 
-     
-
-  
-
-
-
-.. _JobBlob:
-
-JobBlob
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-   Information about execution of a task. 
-
-  
-
-  .. list-table::
-     :widths: auto
-     :header-rows: 1
-
-     * - Name
-       - Type
-       - Info
-       - Description
-     
-     * - type 
-       -   
-       -  required 
-       - Declares the blob content type. 
-     
-     * - created 
-       - string  
-       -  required 
-       - Timestamp when the blob was created. 
-     
-     * - job 
-       - string  
-       - 
-       - MarketSight job ID. 
-     
-     * - mimeType 
-       - string  
-       - 
-       - Value to declare how an object is serialized and encoded. 
-     
-     * - name 
-       - string  
-       - 
-       - Preferable name. 
-     
-     * - object 
-       - string  
-       - 
-       - String representing the object's type. Objects of the same type share the same value. ("JobBlob") 
-     
-     * - id 
-       - string  
-       -  read only 
-       - 
-     
-
-  
-
-
-
-.. _BlobType:
-
-BlobType
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-   Enum set of values to define the blob content type. 
-
-  
-
-
-
-.. _LongJobResult:
-
-LongJobResult
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-   Enum set of values to define the result of long job execution. 
 
   
 
@@ -16412,9 +16446,42 @@ DashboardExternalContent
 
 
 
-.. _OneOfOfDashboardCrosstabContentAndDashboardChartContentAndDashboardDataViewContentAndDashboardRichTextContextAndDashboardImageContextAndDashboardPlaceholderContentAndDashboardGroupContentAndDashboardUrlContentAndDashboardVideoContentAndDashboardLogoContentAndDashboardRectangleContentAndDashboardExternalContent:
+.. _DashboardAdvancedAnalysisContent:
 
-OneOfOfDashboardCrosstabContentAndDashboardChartContentAndDashboardDataViewContentAndDashboardRichTextContextAndDashboardImageContextAndDashboardPlaceholderContentAndDashboardGroupContentAndDashboardUrlContentAndDashboardVideoContentAndDashboardLogoContentAndDashboardRectangleContentAndDashboardExternalContent
+DashboardAdvancedAnalysisContent
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
+
+  
+
+  .. list-table::
+     :widths: auto
+     :header-rows: 1
+
+     * - Name
+       - Type
+       - Info
+       - Description
+     
+     * - type 
+       -   
+       -  required 
+       - 
+     
+     * - advancedAnalysisId 
+       - string  
+       - 
+       - 
+     
+
+  
+
+
+
+.. _OneOfOfDashboardCrosstabContentAndDashboardChartContentAndDashboardDataViewContentAndDashboardRichTextContextAndDashboardImageContextAndDashboardPlaceholderContentAndDashboardGroupContentAndDashboardUrlContentAndDashboardVideoContentAndDashboardLogoContentAndDashboardRectangleContentAndDashboardExternalContentAndDashboardAdvancedAnalysisContent:
+
+OneOfOfDashboardCrosstabContentAndDashboardChartContentAndDashboardDataViewContentAndDashboardRichTextContextAndDashboardImageContextAndDashboardPlaceholderContentAndDashboardGroupContentAndDashboardUrlContentAndDashboardVideoContentAndDashboardLogoContentAndDashboardRectangleContentAndDashboardExternalContentAndDashboardAdvancedAnalysisContent
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
   
@@ -16486,6 +16553,11 @@ OneOfOfDashboardCrosstabContentAndDashboardChartContentAndDashboardDataViewConte
        - 
      
      * - DashboardExternalContent 
+       -   
+       - 
+       - 
+     
+     * - DashboardAdvancedAnalysisContent 
        -   
        - 
        - 
@@ -17020,6 +17092,49 @@ DashboardIn
        - string  
        - 
        - 
+     
+     * - id 
+       - string  
+       -  read only 
+       - 
+     
+
+  
+
+
+
+.. _DashboardDatasets:
+
+DashboardDatasets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
+
+  
+
+  .. list-table::
+     :widths: auto
+     :header-rows: 1
+
+     * - Name
+       - Type
+       - Info
+       - Description
+     
+     * - account 
+       - string  
+       -  read only 
+       - 
+     
+     * - datasets 
+       - list  
+       - 
+       - 
+     
+     * - object 
+       - string  
+       - 
+       - String representing the object's type. Objects of the same type share the same value. ("DashboardDatasets") 
      
      * - id 
        - string  
@@ -17876,6 +17991,11 @@ KeyFindingWithItem
        - 
      
      * - dashBoard 
+       -   
+       - 
+       - 
+     
+     * - advancedAnalysis 
        -   
        - 
        - 
