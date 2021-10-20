@@ -1032,7 +1032,7 @@ result is here:
   :align: center
 
 
-Updating the JS-code thar was created above:
+Updating the JS-code that was created above:
 
 
     .. code-block:: python
