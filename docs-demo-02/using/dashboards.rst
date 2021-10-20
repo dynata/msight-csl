@@ -932,10 +932,13 @@ press `Generate a key pair`.
   :alt: Generating Public/Private keys
   :align: center
 
-You need copy both generated private and public keys into safe place.
-After that, you should send to MarketSight system administrator the public key by email or by the messenger.
-He should associate your public key with your account and he will send you back some unique ID-cocde that will
-be associated with your public key.
+You need copy private key into safe place. The pulic key will be stored on server side and will be used to verify your code.
+
+
+.. note::
+
+       We don't need to save the public key cause we are having the private key and can restore public key from it in any time.
+
 
 
 The basic (theoretical) flow how updating/creating  methods work:
@@ -944,45 +947,127 @@ you should `sign` it with the private key that you have got from the step above.
 binary string. You should send 3 things to server:
 
   *  raw JavaScript/Typescript code;
-  *  signed message;
-  *  unique identity that you has received from MarketSight administrator on exchange for your public key.
+  *  signed message (the binary representation of your raw JavaScript/TypeScript code).    
 
-On the MarketSight side the API application will find your public key by your unique identity and try
+
+On the MarketSight side the API application will find your public key related to your account and try
 to verify you raw JavaScript/Typescript code. If verified message will be the same as your `signed message`
-(2nd parameter you have sent) application will approve your request and apply changing.
+(2nd parameter you have sent) application will approve your request and apply script changing.
 
-For using the MarketSight API Client with the InjectionScript we need to install additional package:
+For using the MarketSight API Client with the InjectionScript we need to install additional cryptography package:
 
 
     .. code-block:: bash
 
        pip install ecdsa
 
-to verify that cryptographic key works correctly run next `python` code:
+to verify that cryptographic key works correctly run next `python` demo code on your local machine:
+
+
+.. code-block:: python
+    :linenos:
+
+    import ecdsa
+    import base64
+
+    # `private_id` can be the copy/paste value that we have generated in the MarketSight backend
+    private_id = "MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgh4WFXmNOHKgQDZIlz/6edvXi6mx172crgFp66izc7o6hRANCAATzbKUebaXF7Weh6ZPjmJGP0erP92qfLSfe+fa29aG/nGYbM1LM6MMe9DOAjGsCSHWRUdqLQXKXQSFcYns6mUQV"
+    private_key = ecdsa.SigningKey.from_der(base64.b64decode(private_id.encode()))
+    public_key = private_key.get_verifying_key()
+
+    raw_message = "message".encode()  # should be in binary format
+    # Signing
+    signature = private_key.sign(raw_message)
+
+    # Verifying
+    if public_key.verify(signature, raw_message):
+        print("`raw_message` is successfully signed")
+    else:
+        print("`raw_message` verification was failed")
+
+
+
+Creating new script with API:
+
+
+.. code-block:: python
+    :linenos:
+
+    import ecdsa
+    str_private_key = "<your private key here>"
+    account_id = <account_id>
+
+    # plaing js-code:
+    js_code = """
+    debugger; // API demo
+    """
+
+    private_key = ecdsa.SigningKey.from_der(base64.b64decode(str_private_key))
+
+    # Signing
+    signature = private_key.sign(js_code.encode())
+    signature_base64 = base64.b64encode(signature)
+
+    model = {
+        "account": account_id,
+        "name": "some_script_name",
+        "javaScriptCode": js_code,
+        "typeScriptCode": "",
+        "privileged": True,
+        "signature": {
+            "blob": signature_base64.decode(),
+            "publicKeyName": "pub-key-name",
+        }
+    }
+
+    result = api.Injected_Scripts.create(account_id=account_id, model=model)
+    print(result.id)
+
+
+result is here:
+
+
+.. image:: _static/working_with_injection_script_api_create_results.png
+  :alt: Creating Injected Scripts through the API
+  :align: center
+
+
+Updating the JS-code thar was created above:
 
 
     .. code-block:: python
        :linenos:
 
-       import ecdsa
-       import base64
+        str_private_key = "<YOUR PRIVATE KEY>"
+        account_id = "<Your account id>"
+        injected_script_id = "<injected script id from example above>"
+        new_js_code = "debugger; // updated code"
 
-       # `private_id` is the copy/paste value that we have generated in the MarketSight backend
-       private_id = "MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgh4WFXmNOHKgQDZIlz/6edvXi6mx172crgFp66izc7o6hRANCAATzbKUebaXF7Weh6ZPjmJGP0erP92qfLSfe+fa29aG/nGYbM1LM6MMe9DOAjGsCSHWRUdqLQXKXQSFcYns6mUQV"
-       private_key = ecdsa.SigningKey.from_der(base64.b64decode(private_id.encode()))
-       public_key = private_key.get_verifying_key()
+        private_key = ecdsa.SigningKey.from_der(
+            base64.b64decode(str_private_key)
+        )
+        # Signing
+        signature = private_key.sign(new_js_code.encode())
+        signature_base64 = base64.b64encode(signature)
 
-       raw_message = "message".encode()  # should be in binary format
-       # Signing
-       signature = private_key.sign(raw_message)
+        model = {
+            "account": account_id,
+            "javaScriptCode": new_js_code,
+            "typeScriptCode": "",
+            "privileged": True,
+            "signature": {"blob": signature_base64.decode()},
+        }
+        api.Injected_Scripts.modify(
+            account_id=account_id,
+            injected_script_id=injected_script_id,
+            model=model
+        )
 
-       # Verifying
-       if public_key.verify(signature, raw_message):
-           print("`raw_message` is successfully signed")
-       else:
-           print("`raw_message` verification was failed")
 
-.. note::
 
-       We don't need restore public key on client side,
-       cause we are having the private key and can restore public key from it in any time.
+ the result of updating
+
+
+.. image:: _static/working_with_injection_script_api_modify.png
+  :alt: Creating Injected Scripts through the API
+  :align: center
