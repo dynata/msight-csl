@@ -91,6 +91,7 @@ setup(
         "simplejson>=3.0",
         "bravado>=10.6.0",
         "dpath>=2.0.1",
+        "chardet>=4.0.0",
         "jsonschema>=3.0,<4.0"
     ],
     # List additional groups of dependencies here (ENV.g. development
