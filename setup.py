@@ -90,7 +90,8 @@ setup(
         "validator-collection>=1.5.0",
         "simplejson>=3.0",
         "bravado>=10.6.0",
-        "dpath>=2.0.1"
+        "dpath>=2.0.1",
+        "jsonschema>=3.0,<4.0"
     ],
     # List additional groups of dependencies here (ENV.g. development
     # dependencies). Users will be able to install these using the "extras"
