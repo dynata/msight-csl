@@ -178,7 +178,7 @@ Accounts
                
           # Example of usage
 
-          account = api.Accounts.retrieve(account_id="f8b3c689edf847c58eca84c58d4966ac")
+          account = api.Accounts.retrieve(account_id="b9b308227cbb4cadb40386b1ff0dedc8")
 
           print(account.id)
           print(account.name),
@@ -187,7 +187,7 @@ Accounts
           # or just
 
           print(
-              api.Accounts.retrieve("f8b3c689edf847c58eca84c58d4966ac").name
+              api.Accounts.retrieve("b9b308227cbb4cadb40386b1ff0dedc8").name
           )
           
     
@@ -224,7 +224,7 @@ Accounts
                
           # Example of usage
           account = api.Accounts.modify(
-              account_id="63279e7da064402fa5601b9f2721448a",
+              account_id="f2af94b346c94d3cac150f5df1c5ac87",
               model={
                   "name": "new name of account",
               }
@@ -268,7 +268,7 @@ Accounts
                
           # Example: Works with `cmix` type partners only
           token = api.Accounts.get_user_tokens(
-              user_id="56164c72516041409a8205374d69ff3e"
+              user_id="c0fddcc875d74ab2b22cfa73b7178bd4"
           )
           print(tokens.access_token)
           print(tokens.refresh_token)
@@ -314,7 +314,7 @@ Accounts
           # Example
           import uuid
 
-          cmix_account = "10f4ef6719bc485095684a0e3a25d924"
+          cmix_account = "6a2ad05538d34fa2b0c2300d75e3bc14"
           access_token = str(uuid.uuid4())
           refresh_token = str(uuid.uuid4())
 
@@ -364,7 +364,7 @@ Accounts
           from bravado.exception import HTTPNotFound
 
           # Check that tokens exists
-          user_id="5f51ce3b647444a780986cab50acc0c7"
+          user_id="d8972b8f27574d5ebe9b2cc4bbe1b062"
           tokens = api.Accounts.get_user_tokens(user_id=<user_id)
           if tokens:
               api.Accounts.delete_user_tokens(user_id=user_id)
@@ -793,12 +793,12 @@ Charts
                
           # Example 1: getting all chart nme from the dataset
 
-           for chart in api.Charts.list(dataset_id="cd4c763accf34bdfa9dd6e85eeadc471").items:
+           for chart in api.Charts.list(dataset_id="fcd8fd2720c84de59cc99e6a92766304").items:
               print(chart.id)
               print(chart.name)
 
           # Example 2: check if chart with name `some name` exists in the dataset
-           if api.Charts.list(dataset_id="cd4c763accf34bdfa9dd6e85eeadc471", name="some name").items:
+           if api.Charts.list(dataset_id="fcd8fd2720c84de59cc99e6a92766304", name="some name").items:
               # Do something here
               pass
           
@@ -870,7 +870,7 @@ Charts
                
           # Example
           updated_chart = api.Charts.modify(
-              chart_id="24ed57c603bc4018b7dfb4e957121ff6",
+              chart_id="ad96aa4609f142ad8da5ed11490420b7",
               model={"description": "Some description"}
           )
           print(updated_chart.description)
@@ -914,7 +914,7 @@ Charts
 
                
           # Example
-          chart = api.Charts.retrieve(chart_id="46c334c150ba4d9e870d6d0367717906")
+          chart = api.Charts.retrieve(chart_id="c0854a51258146bab700e21d1adc0916")
 
           # do some changes with the chart
           chart.description = "NEW DESCRIPTION"
@@ -1026,7 +1026,7 @@ Charts
 
                
           # Example
-          definition = api.Charts.get_definition(chart_id="1c6cf21bb04c438095a8c6117114a8ac")
+          definition = api.Charts.get_definition(chart_id="5b776d42d6f24e18bea0044e9b54a0a8")
 
           
     
@@ -1065,7 +1065,7 @@ Charts
 
                
           # Example
-          definition = api.Charts.get_definition(chart_id="4e31e264d93e4af18dda6d1ea6b8c752")
+          definition = api.Charts.get_definition(chart_id="2e3933f6f3fd45518f94a5b21c72a08d")
           
     
 
@@ -1154,7 +1154,7 @@ Crosstabs
 
                
           Example:
-          crosstabs = api.Crosstabs.list(dataset_id="7121ab8a340a4543b930ae1d798d65f3").items
+          crosstabs = api.Crosstabs.list(dataset_id="92012a4b0cf3473caf2b3218baed4f31").items
           for crostab in crosstabs:
               print(crosstab.id)
               print(crosstab.name)
@@ -1198,7 +1198,7 @@ Crosstabs
 
           # copy definition
           definition = api.Crosstabs.get_definition(
-              crosstab_id="0483f23da3f341ae8a222c27cb6e79ee"
+              crosstab_id="72fe1e5f9ec94c7c9ccf1c217ce997ea"
           )
           # build new model
           model =  model = {
@@ -1209,7 +1209,7 @@ Crosstabs
               "category": "Demographics",
           }
           crosstab = api.Crosstabs.create(
-              dataset_id="a29e4d84ada64953ad4072ff59293294",
+              dataset_id="28c8551d2a774775bb1eac86d8ff0eb3",
               model=model
           )
 
@@ -1256,7 +1256,7 @@ Crosstabs
                
           # Example: change crosstab's description
           crosstab = api.Crosstabs.modify(
-              crosstab_id="b03f626a91cc4add93a63286079aae65",
+              crosstab_id="a80e06c4576649ee828d8afa36eaf344",
               model={"description": "new description"}
           )
 
@@ -1333,9 +1333,9 @@ Crosstabs
                
           # Example
           async_job = api.Crosstabs.delete(
-              account_id="50727f3b6b05406584b7cb62a6932dba",
-              dataset_id="4f00856b54a8476ca8c85adebad6f2a9",
-              crosstab_id="cebf2e4d68734ef1befd4af71119ff03"
+              account_id="43be1f0a363b4a18b19534b71771b7d8",
+              dataset_id="c18d84b3e7cb4fa38913f95e2aaae160",
+              crosstab_id="8692745f1b53419bbdfa54420c898461"
           )
           # Wait until job will be done (job.result should be "succeeded")
           job = api.helper.wait_until(
@@ -1382,7 +1382,7 @@ Crosstabs
 
                
           # Example
-           crosstab = api.Crosstabs.retrieve(crosstab_id="5308f6e15b37414fbef5d760fce9375d")
+           crosstab = api.Crosstabs.retrieve(crosstab_id="524505585b4541af9c3d8e0396c3054d")
            print(crosstab.id)
            print(crosstab.name)
 
@@ -1424,7 +1424,7 @@ Crosstabs
                
           # Example:
           definition = api.Crosstabs.get_definition(
-              crosstab_id="bd370070e9464965bb6875394f2d0009"
+              crosstab_id="7682c976b0d240b5aba2150697eb2025"
           )
           print (definition.description)
           
@@ -1468,7 +1468,7 @@ Crosstabs
                
           # Example: Change `includeEmpty` attribute to opposite value
 
-          crosstab_id = "1723a4a7dbca4555958ab6f7623c292e"
+          crosstab_id = "9dd6e9059d084998937f435799f6a3ef"
 
           definition = api.Crosstabs.get_definition(
               crosstab_id=crosstab_id
@@ -1585,7 +1585,7 @@ Crosstabs
           # example 1: get result asynchronously
 
           async_job = api.Crosstabs.calculate(
-              crosstab_id="663290fbebc14d29a148980d0614cd45",
+              crosstab_id="09bb7d4ee0054e53bf183f15a2cde2ef",
               model={
                   "format": "json",
                   "preferSync": False
@@ -1658,7 +1658,7 @@ Dashboards
 
                
           # Example
-          for dashboard in api.Dashboards.list(account_id="5569e331204a427aac12c80919d08ffe").items:
+          for dashboard in api.Dashboards.list(account_id="86fdaf770eaa42a1a311dc402b74f591").items:
               print(dashboard.name)
           
     
@@ -1718,7 +1718,7 @@ Dashboards
          :linenos:
 
                
-          dashboard = api.Dashboards.retrieve(dashboard_id="1952a5ac92e8455cbf919d23e881f5c9")
+          dashboard = api.Dashboards.retrieve(dashboard_id="3cf3da97811b44d9b9e80ab85c495d37")
           print(dashboard.name)
           
     
@@ -1807,7 +1807,7 @@ Dashboards
 
                
           # Example: delete all dashboards in account
-          api.Dashboards.delete(dashboard_id="d1d56b07ae8b4c13adb4e6717910da5b")
+          api.Dashboards.delete(dashboard_id="a5e68acbdbfd40819800c2068c665f3f")
           
     
 
@@ -1950,7 +1950,7 @@ Dashboards
 
                
           # Example
-          async_res = api.Dashboards.copy(dashboard_id="5090832222ac447caee2c7e20be195bd")
+          async_res = api.Dashboards.copy(dashboard_id="5e2c2b589a7344efba41cc68d82fb536")
 
           # wait until job will be completed
           job = api.helper.wait_until(
@@ -2051,7 +2051,7 @@ Data_Sources
 
                
           # print all available `DataSource`_ for account
-          for ds in api.Data_Sources.list(account_id="912332e893e745cc920cbda78b19826e").items:
+          for ds in api.Data_Sources.list(account_id="ac0e18f52bd740479c46dff46bee1f8b").items:
               print(ds.id, ds.description)
           
     
@@ -2091,7 +2091,7 @@ Data_Sources
           ds = api.Data_Sources.create(
               account_id="-",
               model= {
-                  "account": "f965ab918734455d8d101ccc5fbaf322",
+                  "account": "f21edf38cb784545b2fe4585f1730611",
                   "name": "Example name:Data_Sources.create",
                   "description": "Example description:Data_Sources.create",
                   "enabled": True,
@@ -2136,7 +2136,7 @@ Data_Sources
          :linenos:
 
                
-          ds = api.Data_Sources.retrieve(data_source_id="4d4f1192f18042819f8d61ad27a8ee40")
+          ds = api.Data_Sources.retrieve(data_source_id="b7129be217a74a89ab7808c629753a87")
           print(ds.description)
           
     
@@ -2197,10 +2197,10 @@ Data_Sources
 
                
           #  Example 1: of deleting
-          api.Data_Sources.delete(account_id="-", data_source_id="31b39b19b9aa40c1869bd0bba3d95bd1")
+          api.Data_Sources.delete(account_id="-", data_source_id="5990ce834a374153afe7da1c89b6c7cf")
 
           # Example2: Remove all DataSources from account
-          for ds in api.Data_Sources.list("2c031419fae943d18f287e7d26a8c746").items:
+          for ds in api.Data_Sources.list("2f36c66fbde94294985a598bf38599b0").items:
               api.Data_Sources.delete(data_source_id=ds.id)
           
     
@@ -2255,7 +2255,7 @@ Data_Views
 
                
           # Example: get all `DataViews` available for `DataSet`
-          for dv in api.Data_Views.list(dataset_id="83d2f6dba9ae4b43abb8a6c7a2e630c3").items:
+          for dv in api.Data_Views.list(dataset_id="5553f5424a3c425db41f0a1b6a439106").items:
               print(dv)
           
     
@@ -2351,7 +2351,7 @@ Data_Views
          :linenos:
 
                
-          data_view =  api.Data_Views.retrieve(dataview_id="b2b1a635507b448eb2487c8b59ffb053")
+          data_view =  api.Data_Views.retrieve(dataview_id="3d7ecf5fd3004f5aa0416d0aa82b4b46")
           print(data_view)
           
     
@@ -2395,7 +2395,7 @@ Data_Views
           Example: Update description only
 
           updated_data_view = api.Data_Views.modify(
-              dataview_id="27fa33ba944b42d3804cf0ad0c44c6cf",
+              dataview_id="55328a314a7f43c1a0a57e32e490083d",
               model: {"description": "TEST_DESCRIPTION"}
           )
 
@@ -2441,7 +2441,7 @@ Data_Views
 
                
           # Example: Update the description but send all information about the
-          data_view_id="ae616e991f2b4fce90423e2061947d5b"
+          data_view_id="ed37e765d0d244eb948ad1a852210c9f"
 
           dv = api.Data_Views.retrieve(dataview_id=data_view_id)
 
@@ -2490,7 +2490,7 @@ Data_Views
 
                
           # Example: get all DataDiews definitions for particular DataSet
-          for data_view in api.Data_Views.list(dataset_id="8590339bcd984d7e9ce230646f3b2080").items:
+          for data_view in api.Data_Views.list(dataset_id="d9189e6659de4afa9f4d0d0e85995294").items:
                definition = api.Data_Views.get_definition(
                   dataview_id=data_view.id
                )
@@ -2605,7 +2605,7 @@ Data_Views
           import pathlib
 
           async_job = api.Data_Views.export(
-              dataview_id="87d9b9697f194e50a4789190e90d828f",
+              dataview_id="fd676f3a68a24a1e9049d35063812552",
               model={
                   "format": "excel",
                   "preferSync": False,
@@ -2696,7 +2696,7 @@ Datasets
            _async_job = api.Datasets.create(
               model=dict(
                   folderPath=["test_folder", "sub_folder"],
-                  account="65ff4f1aa94342f7846ea35b88b852c6",
+                  account="f2848aa417b54692915b47b79839cc89",
               ),
               data=open("data_file.csv", "rb"),
            )
@@ -2732,7 +2732,7 @@ Datasets
          :linenos:
 
                
-          for ds in api.Datasets.list(account_id="b4244e664926496f992c3ceec095916e").items:
+          for ds in api.Datasets.list(account_id="26b49ad4ab8249dc8a00afc9269086ad").items:
               print (ds.id)
               print (ds.name)
           
@@ -2768,7 +2768,7 @@ Datasets
          :linenos:
 
                
-          data_set = api.Datasets.retrieve(dataset_id="8db0a5192e19414db3cf29f99569e593")
+          data_set = api.Datasets.retrieve(dataset_id="e929eaa013ef4f988c0e7ec435a2d1d5")
           print(data_set.id)
           print(data_set.name)
           
@@ -2819,7 +2819,7 @@ Datasets
 
                
           # Example move `DataSet` into new folder
-          dataset_id = "069d87ded3d54e1ca847082706fa37ce"
+          dataset_id = "9fdb27632424464688454f0f5cc3d114"
           data_set = api.Datasets.modify(
               dataset_id=dataset_id,
               model={"folderPath": ["new folder", ["new sub-folder"]]}
@@ -2870,7 +2870,7 @@ Datasets
 
                
           # Examples
-          dataset_id="7cf44212244043bca33aebb7f490969b"
+          dataset_id="2aa6e141f0b740c99dcbc9c02ea1667e"
 
           dataset = api.Datasets.retrieve(dataset_id=dataset_id)
           dataset.description = "modified description"
@@ -2916,7 +2916,7 @@ Datasets
 
                
           # Example
-          async_job = api.Datasets.delete(dataset_id="e3e60c97f2184f82bc87dc9357d40d5e")
+          async_job = api.Datasets.delete(dataset_id="457974ddffa24c4f8779de772a36404b")
           
     
 
@@ -2955,11 +2955,11 @@ Datasets
          :linenos:
 
                
-          destination_account_id = "fba0c52c0a1d4b4d92240d1155f6bcbd"
+          destination_account_id = "8c336e1e84ce4415a4ddb07e331ad26e"
 
           async_job = api.Datasets.copy(
               account_id="-",
-              dataset_id="121202b114544220b4f53cf147a8bed4",
+              dataset_id="3d6d2fdd7b19448dae4b08ddeeb0ebcc",
               model={
                   "destinationAccount": destination_account_id,
                   "folderPath": ["test", "dataset_copies"],
@@ -3107,7 +3107,7 @@ Datasets
          :linenos:
 
                
-          permissions = api.Datasets.get_permissions(dataset_id="a4b8bd19da2d4daaa31321472ebee90b")
+          permissions = api.Datasets.get_permissions(dataset_id="16184468bcd54077a89e0e8cd3fefe04")
           print(permissions)
           
     
@@ -3146,11 +3146,11 @@ Datasets
 
                
           # Example
-           new_owner = "1eec53e858fe410d94bc4cb44fe6d7e8"
-           dataset_id = "7efd1eef0f49413d808352e3f797b460"
+           new_owner = "63f30514d72948f08ef379bd4f01c3d3"
+           dataset_id = "183dac5f40ba47008a442d9721fa9f8e"
 
             result = api.Datasets.patch_permissions(
-              dataset_id="7efd1eef0f49413d808352e3f797b460",
+              dataset_id="183dac5f40ba47008a442d9721fa9f8e",
               model={"owner": user.id}
           )
 
@@ -3191,8 +3191,8 @@ Datasets
 
                
           # Example
-           new_owner = "4415baca5b4a4c609becd063384ef736"
-           dataset_id = "710b30f6135e463d80d13a3f0307e8c1"
+           new_owner = "c5417bfcb3f34aafb02385f777eacf39"
+           dataset_id = "37d977ccf5b64329b4f60036b87e0339"
 
            result = api.Datasets.put_permissions(
               account_id=account,
@@ -3311,8 +3311,8 @@ Datasets
 
                
           api.Datasets.delete_group_permission(
-              dataset_id="b5f2293fea204ce1ae7cec5401a32f23",
-              group_id="418edd2fa8b34b8ba904b1933b32bb3d"
+              dataset_id="1ed44d312f8b4147ac5c7f5627a7390c",
+              group_id="20a42f0a74a24cf58c8bb7cd311db9ee"
           )
           
     
@@ -3381,7 +3381,7 @@ Datasets
           # Example
           import random
 
-          dataset_id = "b5c37ba02a884108ac854b88e40a2855"
+          dataset_id = "85c5352b98ad493c90811733f1d9b763"
 
           # Getting random  user (associated with the current partner)
           assocs = api.Partners.get_user_associations(partner_id=client_id)
@@ -3464,9 +3464,9 @@ Datasets
 
   
 
-    .. py:method:: export(account_id, dataset_id)
+    .. py:method:: export(account_id, dataset_id, datasetType)
 
-      Export dataset to SPSS.
+      Export dataset to SPSS or SPSSWithoutUDVs.
 
       
 
@@ -3476,6 +3476,9 @@ Datasets
       
       :param dataset_id: ID of the Dataset to export
       :type dataset_id: str
+      
+      :param datasetType: Export type
+      :type datasetType: str
       
 
       
@@ -3495,7 +3498,7 @@ Datasets
 
                
           # Check that dataset is in status `ready`
-          dataset_id = "9854736ab41a4ae693416aa44903b36f"
+          dataset_id = "9c2da6695f2c4f6cb83616cde64cfca3"
           if api.Datasets.retrieve(dataset_id=dataset_id).status == 'ready':
               async_job = api.Datasets.export(dataset_id=dataset_id)
 
@@ -3615,7 +3618,7 @@ Datasets
 
                
           # Example
-          result = api.Datasets.get_messages(dataset_id="e66d5f274f324668b5ba22386b8c6d1c")
+          result = api.Datasets.get_messages(dataset_id="ead6b98c9a2043d0b48b28e17621cd6c")
           print(result)
           
     
@@ -3648,7 +3651,7 @@ Datasets
 
                
           # Example
-          metadata= api.Datasets.get_metadata(dataset_id="ad59f3f576ef4b8dac72579ec138e052")
+          metadata= api.Datasets.get_metadata(dataset_id="b45d50c003104a9fbb9e167b264493c5")
           print(metadata)
           
     
@@ -3740,7 +3743,7 @@ Files
           model = dict(
               folderPath=["uploaded"],
               name="Uploaded file",
-              account="330a21f12d0247bca77735921c2c7b6c",
+              account="679359ccaf2c4fa1893f2d48dfd3e0f2",
               description="Some file description",
           )
 
@@ -3785,7 +3788,7 @@ Files
                
           # Example:
 
-          file =  api.Files.retrieve(file_id="2b010b6052ad410c9d9fe90e84ca9536")
+          file =  api.Files.retrieve(file_id="ece234168e37483ba169ee5ab2c6f105")
 
           print(file.id)
           print(file.description)
@@ -3826,7 +3829,7 @@ Files
                model=dict(
                    folderPath=["test"],
                    name="Some file name",
-                   account="4608bd236f69431b88d783e34818c052",
+                   account="7f4aacb66c3142bcb16ea03311046ec7",
                    description="Some file description",
                ),
                data=open("some_file.txt", "rb"),
@@ -3875,7 +3878,7 @@ Files
 
                
            file = api.Files.modify(
-              file_id="8f046f0b8e5642059238120e33e0f3ff",
+              file_id="b1cf1f341ab843c9aa61695595d915ee",
               model={"name": "new file name"}
           )
 
@@ -3939,7 +3942,7 @@ Files
                
           # Example:
 
-          async_job = api.Files.copy(file_id="10d5c5cf7baf47cc8aed91f40d3dd9c3")
+          async_job = api.Files.copy(file_id="6c581697ed4341488ba3c310fd53ad9a")
 
           # Wait until job.result will return "succeeded"
 
@@ -3986,7 +3989,7 @@ Files
 
                
           # Example
-          permissions = api.Files.get_permissions(file_id="7241b07d9eb8474bb633ca1d3fdc4f42")
+          permissions = api.Files.get_permissions(file_id="3583ad93965c4e53bd5b6421b1b1f7b2")
           print(permissions)
           
     
@@ -4109,7 +4112,7 @@ Files
 
                
           # Example: Will change the `full` permission to `view` for some group
-          file_id = "cb4a0c17c535423babd60eea0c132de2"
+          file_id = "9528d56907214ece9853a38b153fc505"
            group_permissions = api.Files.get_group_permissions(
               file_id=file.id
           )
@@ -4280,7 +4283,7 @@ Injected_Scripts
          :linenos:
 
                
-          account_id= "83688900a7214899a47992c7ebbe465d"
+          account_id= "894acc7be5064060bdf256dc01f635eb"
           result = api.Injected_Scripts.list(account_id=account_id)
           for injection_script in result.items:
               print (injection_script.name)
@@ -4385,8 +4388,8 @@ Injected_Scripts
          :linenos:
 
                
-          account_id= "371e99d1f32c49378b31978e387bb74a"
-          injection_script_id = "a6ae4372946d4bd5b95ce5798bbe5b05"
+          account_id= "0b18cd7967e547e78f6ed1849114299b"
+          injection_script_id = "87ce90e9ce87453c9e70c03bea159b4d"
 
           result = api.Injected_Scripts.retrieve(
               account_id=account_id,
@@ -4432,8 +4435,8 @@ Injected_Scripts
 
                
           str_private_key = <YOUR PRIVATE KEY>
-          account_id = "fdf04521ed7949cb8d6902c6af8988c9"
-          injected_script_id = "4e172c0fa82c441c9b096210e67e381f"
+          account_id = "e4e743feb59c4403bd732e22b9a920ff"
+          injected_script_id = "c896353845df4e38adca2a8188dc6be6"
           new_js_code = "debugger; // updated code"
 
           private_key = ecdsa.SigningKey.from_der(
@@ -4485,34 +4488,9 @@ Injected_Scripts
          :linenos:
 
                
-          injection_script_id = "931dd36b86864896b424eca5e1cc852d"
+          injection_script_id = "050749c9e16945be8932e1dce61d8ce8"
           api.Injected_Scripts.delete(injected_script_id=injection_script_id)
           
-    
-
-  
-
-    .. py:method:: get_public_keys(account_id, injected_script_id)
-
-      Export Injected Script Public Keys in JWK Set format.
-
-      This method is used by client UI to get list of all public keys which are valid for script signing.`account_id` and `injected_script_id` parameters should be always = '-'
-
-      
-      :param account_id: This must be wildcard (-).
-      :type account_id: str
-      
-      :param injected_script_id: This must be wildcard (-).
-      :type injected_script_id: str
-      
-
-      
-      
-      
-      :rtype: `JwkSet`_
-      
-      
-
     
 
   
@@ -5298,12 +5276,12 @@ Partners
           # Example 1: get partner to account associations by  external_id of account
           result = api.Partners.get_account_associations(
               partner_id="-",
-              externalAccount="b7f82104a053418980a9c5ed77e6c60e"
+              externalAccount="57649d753bb54f0da4baf23c67bf3adb"
           )
           print (result.items)
 
           # Example 2: get all accounts associated with the partner
-          result = api.Partners.get_account_associations(partner_id="c602f09dae2446baa9f04a948b9c966e")
+          result = api.Partners.get_account_associations(partner_id="f5d9f25931b1465a95c23e91f671d42a")
           for item in result.items:
               print (item.account)
           
@@ -5342,8 +5320,8 @@ Partners
           # Example:
 
           assoc = api.Partners.get_account_association(
-              partner_id="f6ef44e738c54aeeabb465b8cae50a2d",
-              account_id="196d10e292034ae7ab42a8124b24ab76"
+              partner_id="065e2526d7a540019bfeafe0807a12f1",
+              account_id="613a8abc890f46a2914e0f5dd96c10da"
           )
           print (assoc)
           
@@ -5542,7 +5520,7 @@ Partners
 
           for user in api.Users.list(account_id=account).items:
               association = api.Partners.get_user_association(
-                  partner_id="64b01e2523f544d1aaeb7f531a8dd4e1",
+                  partner_id="1b06f61fbd9149148d3debfd4802f245",
                   user_id=user.id
               )
               print(f"user_id={user.id}, externalId={association.externalId}")
@@ -5634,8 +5612,8 @@ Partners
                
           # Example
           api.Partners.delete_user_association(
-              partner_id="37ab779aaa834944a056d58184f9063b",
-              user_id="9c5cef356db94decab0690d0dfa9e806"
+              partner_id="54aaf050ba16478ea2000b56da8947ce",
+              user_id="01965dc496524c14af75a3c4985fc5d1"
           )
           
     
@@ -5829,12 +5807,12 @@ Users
 
                
           # Example
-          for user in api.Users.list(account_id="bec01f6471d34c65835ac4f9f8da9fa7").items:
+          for user in api.Users.list(account_id="e3af1b35ddac46918a59c7c076985a51").items:
               print(user.firstName, user.email)
 
           # Find user by username or Email
           result = api.Users.list(
-              account_id="bec01f6471d34c65835ac4f9f8da9fa7",
+              account_id="e3af1b35ddac46918a59c7c076985a51",
               usernameOrEmail="some@email.com",
           )
           if result.count > 0:
@@ -5843,7 +5821,7 @@ Users
 
           # find user by `username` only
             result = api.Users.list(
-              account_id="bec01f6471d34c65835ac4f9f8da9fa7", username="test_username"
+              account_id="e3af1b35ddac46918a59c7c076985a51", username="test_username"
           )
           if result.items:
               user = result.items[0]
@@ -5887,7 +5865,7 @@ Users
                
           # example
           user = api.Users.create(
-              account_id="2acbd67de9634ce695bb810d6133dc88",
+              account_id="9bb9c063617c4c90a03ed23c909757fe",
               model={
                   "password": "d868701d-6c26-422d-a2cf-ae9a9af1905e",
                   "userName": "username_test",
@@ -5933,7 +5911,7 @@ Users
          :linenos:
 
                
-          user = api.Users.retrieve(user_id="bb1ccebcd5754f199b6d4511b9d82241")
+          user = api.Users.retrieve(user_id="bb696a2fe25742739a53b89c5c3abd4d")
           print(user.id, user.firstName, user.email)
           
     
@@ -5972,7 +5950,7 @@ Users
 
                
           # Example 1: update first name for user
-          user_id = "3401af78d2e147fea77725882bebfb91"
+          user_id = "c2a7f537de614c4da812c770f7d4ebb9"
           user = api.Users.retrieve(user_id=user_id)
           user.firstName = "NewFistName"
 
@@ -6017,7 +5995,7 @@ Users
           # Getting all administered account(s) for some user
           print (
               api.Users.get_administered_accounts(
-                  user_id="78c92433675a4c9795a0c690dcf1d7d8"
+                  user_id="aa307bcb46814d2ba018ea624afec4a5"
               ).items
           )
           
@@ -6056,7 +6034,7 @@ Users
           # Getting all administered account(s) for some user
           print (
               api.Users.get_administered_accounts(
-                  user_id="e0f0e8da44a1408ca52ba9a7586dc75f"
+                  user_id="67b8f43d1725425ca066fa1206885a6f"
               ).items
           )
           
@@ -6239,7 +6217,7 @@ Variables
                
           # Example
           for category in api.Variables.get_categories(
-              dataset_id="3e905b2da0e84d73832aae189723632e"
+              dataset_id="33fa59416d0c49d0b3cf96b1a0d51ecf"
           ).items:
               print(
                   category.id,
@@ -6284,7 +6262,7 @@ Variables
 
                
           # Example
-          dataset_id="438ce2d6165d41d5ba4c555f87227f17"
+          dataset_id="4352d5d1007a47cda003daa74e014988"
           result = api.Variables.post_category(
               model=dict(
                   dataset=dataset_id,
@@ -6330,7 +6308,7 @@ Variables
 
           import secrets
 
-          dataset = "466dd90f622348a9a7d2828955960e1e"
+          dataset = "28eab63dc2ed4a69b10aa8da2a0410ae"
 
           category = api.Variables.post_category(
               model=dict(
@@ -6391,7 +6369,7 @@ Variables
                
           # Example: check if category exists with the name "test_category"
           result = api.Variables.get_category(
-              dataset_id="4dfaeb18be3a47bfb949bef5020b117e",
+              dataset_id="037c0d35e6c94772bc6653b6677e278d",
               category_name="test_category"
           )
           if result:
@@ -6438,7 +6416,7 @@ Variables
                
           # Example: change the description and name in `test_category`
           updated_category = api.Variables.patch_category(
-              dataset_id="f15d36ac8992456caeea720f2f72f9b4",
+              dataset_id="4429afd393e94fd28d66d1f829190bd1",
               category_name="test_category",
               model=dict(
                   description="new description for category",
@@ -6514,7 +6492,7 @@ Variables
                
           # Example
           api.Variables.delete_category(
-              dataset_id="5bd8bd72f00c4d5081e3f76d6bf13527",
+              dataset_id="bcdb1bd1cc33452997661d900c0abf16",
               category_name="some_test_category_name"
           )
           
@@ -6555,7 +6533,7 @@ Variables
                
           # Example: get list of variables related to `category_name`
           result = api.Variables.get_category_variables(
-              dataset_id="5ada0b5f9817440cb2a8e1321973806a",
+              dataset_id="ba4d98d6548a46288fab712ae9c39b69",
               category_name="category_name"
           )
           for variable in result.items:
@@ -6595,14 +6573,14 @@ Variables
 
                
           # Example
-           for variable in api.Variables.list(dataset_id="cef25af3eb2a4269abdb4fb92772c672").items:
+           for variable in api.Variables.list(dataset_id="562f1a8a7644472ba24b02508d5fc1f6").items:
               print(variable.code)
           
     
 
   
 
-    .. py:method:: create(account_id, dataset_id, model)
+    .. py:method:: create(account_id, dataset_id, anyModel)
 
       Create a new variable.
 
@@ -6615,14 +6593,14 @@ Variables
       :param dataset_id: MarketSight dataset ID.
       :type dataset_id: str
       
-      :param model: 
-      :type model: 
+      :param anyModel: 
+      :type anyModel: 
       
 
       
       
       
-      :rtype: `Variable`_
+      :rtype: `AnyVariable`_
       
       
 
@@ -6635,7 +6613,7 @@ Variables
                
           # Example: create variable
 
-          dataset_id="91e4e9636b5448b5aa05b6a3ceb5318b"
+          dataset_id="cae19cbb272846389d2c8f79d435b943"
           variable = api.Variables.create(
               dataset_id=dataset_id,
               model=dict(
@@ -6688,7 +6666,7 @@ Variables
                
           # Example: remove variables with code "CSLTestVariable1", "CSLTestVariable2"
           api.Variables.delete_variables(
-              dataset_id="3c470f1cbfcf415f861e9b102c524610",
+              dataset_id="56e9de9d05e948bd98e44cfdee2be83d",
               model=dict(variables=["CSLTestVariable1", "CSLTestVariable2"])
           )
           
@@ -6716,7 +6694,7 @@ Variables
       
       
       
-      :rtype: `Variable`_
+      :rtype: `AnyVariable`_
       
       
 
@@ -6773,7 +6751,7 @@ Variables
                
           # Example
           api.Variables.delete(
-              dataset_id="1fa0f80a29454199b79298a6cd3899d8",
+              dataset_id="a1c3e902b27f43dda10484f5ba6863e4",
               variable_code="ExampleVariable"
           )
           
@@ -6804,7 +6782,7 @@ Variables
       
       
       
-      :rtype: `Variable`_
+      :rtype: `AnyVariable`_
       
       
       
@@ -6822,7 +6800,7 @@ Variables
                
           # Example: change the `label` of variable
           variable = api.Variables.modify(
-              dataset_id="404e503eadbd4535987a74bb1c13b256",
+              dataset_id="8bab06cb3f5c4f939f64656598f282a1",
               variable_code="CSLTestVariable",
               model={
                   'label': "new label text"
@@ -7122,7 +7100,7 @@ Variables
 
                
           #Example:
-          print (api.Variables.get_grid_sets(dataset_id="57776f2218db4db3ad4070cb8a5b74aa"))
+          print (api.Variables.get_grid_sets(dataset_id="bd9f44905a8d49fbad043a44017a8348"))
           
     
 
@@ -13482,24 +13460,39 @@ CrosstabDefinitionNet
        -  required 
        - 
      
+     * - code 
+       - number  
+       -  required 
+       - 
+     
      * - placement 
        -   
        -  required 
        - The placement of automatic net values relative to non-net definition values. 
      
-     * - count 
-       - integer  
-       -  required 
-       - For an aggregate Net, indicates the number of non-Net definition values to aggregate. 
-     
-     * - top 
-       - integer  
-       -  required 
+     * - label 
+       - string  
+       - 
        - 
      
-     * - bottom 
-       - integer  
-       -  required 
+     * - topNet 
+       -   
+       - 
+       - 
+     
+     * - bottomNet 
+       -   
+       - 
+       - 
+     
+     * - placementSelector 
+       -   
+       - 
+       - 
+     
+     * - netSelector 
+       -   
+       - 
        - 
      
 
@@ -13524,6 +13517,95 @@ AutoNetValuePlacement
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
    Enum set of values to indicate placement of Auto-Net values relative to other values. 
+
+  
+
+
+
+.. _CrosstabDefinitionNetSelector:
+
+CrosstabDefinitionNetSelector
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
+
+  
+
+  .. list-table::
+     :widths: auto
+     :header-rows: 1
+
+     * - Name
+       - Type
+       - Info
+       - Description
+     
+     * - selectors 
+       - list  of  `CrosstabDefinitionRowSelector`_
+       - 
+       - 
+     
+
+  
+
+
+
+.. _CrosstabDefinitionRowSelector:
+
+CrosstabDefinitionRowSelector
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
+
+  
+
+  .. list-table::
+     :widths: auto
+     :header-rows: 1
+
+     * - Name
+       - Type
+       - Info
+       - Description
+     
+     * - selectors 
+       - list  of  `CrosstabDefinitionVariableValueSelector`_
+       - 
+       - 
+     
+
+  
+
+
+
+.. _CrosstabDefinitionVariableValueSelector:
+
+CrosstabDefinitionVariableValueSelector
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
+
+  
+
+  .. list-table::
+     :widths: auto
+     :header-rows: 1
+
+     * - Name
+       - Type
+       - Info
+       - Description
+     
+     * - valueCode 
+       - number  
+       -  required 
+       - 
+     
+     * - variableCode 
+       - string  
+       - 
+       - 
+     
 
   
 
@@ -17982,82 +18064,6 @@ CollectionOfInjectedScript
 
 
 
-.. _JwkSet:
-
-JwkSet
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-  
-
-  
-
-  .. list-table::
-     :widths: auto
-     :header-rows: 1
-
-     * - Name
-       - Type
-       - Info
-       - Description
-     
-     * - keys 
-       - list  of  `Jwk`_
-       - 
-       - 
-     
-
-  
-
-
-
-.. _Jwk:
-
-Jwk
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-  
-
-  
-
-  .. list-table::
-     :widths: auto
-     :header-rows: 1
-
-     * - Name
-       - Type
-       - Info
-       - Description
-     
-     * - kty 
-       - string  
-       -  required 
-       - Key Type 
-     
-     * - crv 
-       - string  
-       -  required 
-       - Curve Name 
-     
-     * - kid 
-       - string  
-       -  required 
-       - Key ID 
-     
-     * - x 
-       - string  
-       -  required 
-       - Base64URL-encoded Qx 
-     
-     * - y 
-       - string  
-       -  required 
-       - Base64URL-encoded Qy 
-     
-
-  
-
-
-
 .. _KeyFindingWithItem:
 
 KeyFindingWithItem
@@ -18771,6 +18777,17 @@ DatasetCopy
        - 
        - Folder path of the target destination. 
      
+
+  
+
+
+
+.. _ExportDatasetType:
+
+ExportDatasetType
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
 
   
 
@@ -20524,16 +20541,6 @@ Variable
        -  read only 
        - 
      
-     * - mrvModel 
-       -   
-       - 
-       - Is used for MRV variables only 
-     
-     * - weightVariableModel 
-       -   
-       - 
-       - Is used for weight variables only 
-     
      * - object 
        - string  
        - 
@@ -20555,89 +20562,12 @@ VariableKind
 
 
 
-.. _MRV:
-
-MRV
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-  
-
-  
-
-  .. list-table::
-     :widths: auto
-     :header-rows: 1
-
-     * - Name
-       - Type
-       - Info
-       - Description
-     
-     * - countedValueCode 
-       - number  
-       - 
-       - 
-     
-
-  
-
-
-
-.. _WeightVariable:
-
-WeightVariable
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-  
-
-  
-
-  .. list-table::
-     :widths: auto
-     :header-rows: 1
-
-     * - Name
-       - Type
-       - Info
-       - Description
-     
-     * - calculationMethod 
-       -   
-       -  required 
-       - 
-     
-     * - tolerance 
-       - number  
-       -  required 
-       - 
-     
-     * - maxIterations 
-       - integer  
-       -  required 
-       - 
-     
-
-  
-
-
-
-.. _WeightVariableCalculationMethod:
-
-WeightVariableCalculationMethod
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-  
-
-  
-
-
-
 .. _UploadedVariableType:
 
 UploadedVariableType
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   Set of enum values to indicate sub-type of uploaded variable. 
+  
 
   
 
@@ -20704,9 +20634,9 @@ DeleteVariables
 
 
 
-.. _ConditionalValue:
+.. _DichotomousVariable:
 
-ConditionalValue
+DichotomousVariable
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
   
@@ -20727,20 +20657,126 @@ ConditionalValue
        -  required 
        - 
      
-     * - include_missing 
-       - boolean  
-       -  required 
+     * - countedValueCode 
+       - number  
+       - 
        - 
      
-     * - all_other 
-       - boolean  
-       -  required 
-       - 
-     
-     * - expr 
+     * - object 
        - string  
        - 
-       - A conditional expression in ordinal (plain) form. Variables and values are encoded using their respective codes.Q.1 = 0 and demo01 = 1 
+       - String representing the object's type. Objects of the same type share the same value. ("MRVariable") 
+     
+     * - values 
+       - list  of  `MrvValue`_
+       - 
+       - 
+     
+
+  
+
+
+
+.. _MRVariable:
+
+MRVariable
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
+
+  
+
+  .. list-table::
+     :widths: auto
+     :header-rows: 1
+
+     * - Name
+       - Type
+       - Info
+       - Description
+     
+     * - type 
+       -   
+       -  required 
+       - 
+     
+     * - values 
+       - list  of  `MrvValue`_
+       -  required 
+       - 
+     
+     * - object 
+       - string  
+       - 
+       - String representing the object's type. Objects of the same type share the same value. ("Variable") 
+     
+     * - id 
+       - string  
+       - 
+       - 
+     
+     * - dataset 
+       - string  
+       - 
+       - 
+     
+     * - category 
+       - string  
+       - 
+       - Variable Category Name or ID 
+     
+     * - code 
+       - string  
+       - 
+       - Variable Code 
+     
+     * - label 
+       - string  
+       - 
+       - Variable label 
+     
+     * - description 
+       - string  
+       - 
+       - Variable Description 
+     
+     * - kind 
+       -   
+       -  read only 
+       - 
+     
+
+  
+
+
+
+.. _MrvValue:
+
+MrvValue
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
+
+  
+
+  .. list-table::
+     :widths: auto
+     :header-rows: 1
+
+     * - Name
+       - Type
+       - Info
+       - Description
+     
+     * - type 
+       -   
+       -  required 
+       - 
+     
+     * - prec_var 
+       - string  
+       - 
+       - should be precedent variable code 
      
      * - label 
        - string  
@@ -20801,9 +20837,9 @@ VariableValueBase
 
 
 
-.. _MrvValue:
+.. _WeightVariable:
 
-MrvValue
+WeightVariable
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
   
@@ -20819,24 +20855,79 @@ MrvValue
        - Info
        - Description
      
+     * - calculationMethod 
+       -   
+       -  required 
+       - 
+     
+     * - tolerance 
+       - number  
+       -  required 
+       - 
+     
+     * - maxIterations 
+       - integer  
+       -  required 
+       - 
+     
      * - type 
        -   
        -  required 
        - 
      
-     * - prec_var 
-       - string  
+     * - values 
+       - list  of  `WeightValue`_
+       -  required 
        - 
-       - should be precedent variable code 
      
-     * - label 
+     * - filterVariable 
        - string  
        - 
        - 
+     
+     * - groupingVariable 
+       - string  
+       - 
+       - 
+     
+     * - object 
+       - string  
+       - 
+       - String representing the object's type. Objects of the same type share the same value. ("Variable") 
+     
+     * - id 
+       - string  
+       - 
+       - 
+     
+     * - dataset 
+       - string  
+       - 
+       - 
+     
+     * - category 
+       - string  
+       - 
+       - Variable Category Name or ID 
      
      * - code 
        - string  
        - 
+       - Variable Code 
+     
+     * - label 
+       - string  
+       - 
+       - Variable label 
+     
+     * - description 
+       - string  
+       - 
+       - Variable Description 
+     
+     * - kind 
+       -   
+       -  read only 
        - 
      
 
@@ -20844,39 +20935,12 @@ MrvValue
 
 
 
-.. _VariableValue:
+.. _WeightVariableCalculationMethod:
 
-VariableValue
+WeightVariableCalculationMethod
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
   
-
-  
-
-  .. list-table::
-     :widths: auto
-     :header-rows: 1
-
-     * - Name
-       - Type
-       - Info
-       - Description
-     
-     * - type 
-       -   
-       -  required 
-       - 
-     
-     * - label 
-       - string  
-       - 
-       - 
-     
-     * - code 
-       - string  
-       - 
-       - 
-     
 
   
 
@@ -20935,6 +20999,753 @@ WeightValue
 
 
 
+.. _GridVariable:
+
+GridVariable
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
+
+  
+
+  .. list-table::
+     :widths: auto
+     :header-rows: 1
+
+     * - Name
+       - Type
+       - Info
+       - Description
+     
+     * - type 
+       -   
+       -  required 
+       - 
+     
+     * - calculationType 
+       -   
+       -  required 
+       - 
+     
+     * - showValuesAsColumns 
+       - boolean  
+       -  required 
+       - 
+     
+     * - variables 
+       - list  of  `GridIncludedVariable`_
+       -  required 
+       - 
+     
+     * - values 
+       - list  of  `GridValue`_
+       -  required 
+       - 
+     
+     * - object 
+       - string  
+       - 
+       - String representing the object's type. Objects of the same type share the same value. ("Variable") 
+     
+     * - id 
+       - string  
+       - 
+       - 
+     
+     * - dataset 
+       - string  
+       - 
+       - 
+     
+     * - category 
+       - string  
+       - 
+       - Variable Category Name or ID 
+     
+     * - code 
+       - string  
+       - 
+       - Variable Code 
+     
+     * - label 
+       - string  
+       - 
+       - Variable label 
+     
+     * - description 
+       - string  
+       - 
+       - Variable Description 
+     
+     * - kind 
+       -   
+       -  read only 
+       - 
+     
+
+  
+
+
+
+.. _VariableCalculationType:
+
+VariableCalculationType
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
+
+  
+
+
+
+.. _GridIncludedVariable:
+
+GridIncludedVariable
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
+
+  
+
+  .. list-table::
+     :widths: auto
+     :header-rows: 1
+
+     * - Name
+       - Type
+       - Info
+       - Description
+     
+     * - variable 
+       - string  
+       - 
+       - 
+     
+     * - identifier 
+       - string  
+       - 
+       - 
+     
+
+  
+
+
+
+.. _GridValue:
+
+GridValue
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
+
+  
+
+  .. list-table::
+     :widths: auto
+     :header-rows: 1
+
+     * - Name
+       - Type
+       - Info
+       - Description
+     
+     * - type 
+       -   
+       -  required 
+       - 
+     
+     * - identifier 
+       - string  
+       - 
+       - 
+     
+     * - label 
+       - string  
+       - 
+       - 
+     
+     * - code 
+       - string  
+       - 
+       - 
+     
+
+  
+
+
+
+.. _ConditionalVariable:
+
+ConditionalVariable
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
+
+  
+
+  .. list-table::
+     :widths: auto
+     :header-rows: 1
+
+     * - Name
+       - Type
+       - Info
+       - Description
+     
+     * - type 
+       -   
+       -  required 
+       - 
+     
+     * - values 
+       - list  of  `ConditionalValue`_
+       - 
+       - 
+     
+     * - object 
+       - string  
+       - 
+       - String representing the object's type. Objects of the same type share the same value. ("Variable") 
+     
+     * - id 
+       - string  
+       - 
+       - 
+     
+     * - dataset 
+       - string  
+       - 
+       - 
+     
+     * - category 
+       - string  
+       - 
+       - Variable Category Name or ID 
+     
+     * - code 
+       - string  
+       - 
+       - Variable Code 
+     
+     * - label 
+       - string  
+       - 
+       - Variable label 
+     
+     * - description 
+       - string  
+       - 
+       - Variable Description 
+     
+     * - kind 
+       -   
+       -  read only 
+       - 
+     
+
+  
+
+
+
+.. _ConditionalValue:
+
+ConditionalValue
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
+
+  
+
+  .. list-table::
+     :widths: auto
+     :header-rows: 1
+
+     * - Name
+       - Type
+       - Info
+       - Description
+     
+     * - type 
+       -   
+       -  required 
+       - 
+     
+     * - include_missing 
+       - boolean  
+       -  required 
+       - 
+     
+     * - all_other 
+       - boolean  
+       -  required 
+       - 
+     
+     * - expr 
+       - string  
+       - 
+       - A conditional expression in ordinal (plain) form. Variables and values are encoded using their respective codes.Q.1 = 0 and demo01 = 1 
+     
+     * - label 
+       - string  
+       - 
+       - 
+     
+     * - code 
+       - string  
+       - 
+       - 
+     
+
+  
+
+
+
+.. _FilterVariable:
+
+FilterVariable
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
+
+  
+
+  .. list-table::
+     :widths: auto
+     :header-rows: 1
+
+     * - Name
+       - Type
+       - Info
+       - Description
+     
+     * - type 
+       -   
+       -  required 
+       - 
+     
+     * - value 
+       -   
+       -  required 
+       - 
+     
+     * - object 
+       - string  
+       - 
+       - String representing the object's type. Objects of the same type share the same value. ("Variable") 
+     
+     * - id 
+       - string  
+       - 
+       - 
+     
+     * - dataset 
+       - string  
+       - 
+       - 
+     
+     * - category 
+       - string  
+       - 
+       - Variable Category Name or ID 
+     
+     * - code 
+       - string  
+       - 
+       - Variable Code 
+     
+     * - label 
+       - string  
+       - 
+       - Variable label 
+     
+     * - description 
+       - string  
+       - 
+       - Variable Description 
+     
+     * - kind 
+       -   
+       -  read only 
+       - 
+     
+
+  
+
+
+
+.. _MathematicalVariable:
+
+MathematicalVariable
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
+
+  
+
+  .. list-table::
+     :widths: auto
+     :header-rows: 1
+
+     * - Name
+       - Type
+       - Info
+       - Description
+     
+     * - type 
+       -   
+       -  required 
+       - 
+     
+     * - value 
+       -   
+       -  required 
+       - 
+     
+     * - object 
+       - string  
+       - 
+       - String representing the object's type. Objects of the same type share the same value. ("Variable") 
+     
+     * - id 
+       - string  
+       - 
+       - 
+     
+     * - dataset 
+       - string  
+       - 
+       - 
+     
+     * - category 
+       - string  
+       - 
+       - Variable Category Name or ID 
+     
+     * - code 
+       - string  
+       - 
+       - Variable Code 
+     
+     * - label 
+       - string  
+       - 
+       - Variable label 
+     
+     * - description 
+       - string  
+       - 
+       - Variable Description 
+     
+     * - kind 
+       -   
+       -  read only 
+       - 
+     
+
+  
+
+
+
+.. _DateTimeVariable:
+
+DateTimeVariable
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
+
+  
+
+  .. list-table::
+     :widths: auto
+     :header-rows: 1
+
+     * - Name
+       - Type
+       - Info
+       - Description
+     
+     * - type 
+       -   
+       -  required 
+       - 
+     
+     * - object 
+       - string  
+       - 
+       - String representing the object's type. Objects of the same type share the same value. ("VariableWithValues") 
+     
+     * - values 
+       - list  of  `VariableValue`_
+       - 
+       - 
+     
+
+  
+
+
+
+.. _VariableWithValues:
+
+VariableWithValues
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
+
+  
+
+  .. list-table::
+     :widths: auto
+     :header-rows: 1
+
+     * - Name
+       - Type
+       - Info
+       - Description
+     
+     * - values 
+       - list  of  `VariableValue`_
+       - 
+       - 
+     
+     * - object 
+       - string  
+       - 
+       - String representing the object's type. Objects of the same type share the same value. ("Variable") 
+     
+     * - id 
+       - string  
+       - 
+       - 
+     
+     * - dataset 
+       - string  
+       - 
+       - 
+     
+     * - category 
+       - string  
+       - 
+       - Variable Category Name or ID 
+     
+     * - code 
+       - string  
+       - 
+       - Variable Code 
+     
+     * - label 
+       - string  
+       - 
+       - Variable label 
+     
+     * - description 
+       - string  
+       - 
+       - Variable Description 
+     
+     * - kind 
+       -   
+       -  read only 
+       - 
+     
+     * - type 
+       -   
+       - 
+       - 
+     
+
+  
+
+
+
+.. _VariableValue:
+
+VariableValue
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
+
+  
+
+  .. list-table::
+     :widths: auto
+     :header-rows: 1
+
+     * - Name
+       - Type
+       - Info
+       - Description
+     
+     * - type 
+       -   
+       -  required 
+       - 
+     
+     * - label 
+       - string  
+       - 
+       - 
+     
+     * - code 
+       - string  
+       - 
+       - 
+     
+
+  
+
+
+
+.. _UploadedNumericVariable:
+
+UploadedNumericVariable
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
+
+  
+
+  .. list-table::
+     :widths: auto
+     :header-rows: 1
+
+     * - Name
+       - Type
+       - Info
+       - Description
+     
+     * - isOrdinal 
+       - boolean  
+       -  required 
+       - 
+     
+     * - type 
+       -   
+       -  required 
+       - 
+     
+     * - object 
+       - string  
+       - 
+       - String representing the object's type. Objects of the same type share the same value. ("Variable") 
+     
+     * - values 
+       - list  of  `VariableValue`_
+       - 
+       - 
+     
+     * - id 
+       - string  
+       - 
+       - 
+     
+     * - dataset 
+       - string  
+       - 
+       - 
+     
+     * - category 
+       - string  
+       - 
+       - Variable Category Name or ID 
+     
+     * - code 
+       - string  
+       - 
+       - Variable Code 
+     
+     * - label 
+       - string  
+       - 
+       - Variable label 
+     
+     * - description 
+       - string  
+       - 
+       - Variable Description 
+     
+     * - kind 
+       -   
+       -  read only 
+       - 
+     
+
+  
+
+
+
+.. _AnyVariable:
+
+AnyVariable
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
+
+  
+
+  .. list-table::
+     :widths: auto
+     :header-rows: 1
+
+     * - Name
+       - Type
+       - Info
+       - Description
+     
+     * - Variable 
+       -   
+       - 
+       - 
+     
+     * - DichotomousVariable 
+       -   
+       - 
+       - 
+     
+     * - WeightVariable 
+       -   
+       - 
+       - 
+     
+     * - GridVariable 
+       -   
+       - 
+       - 
+     
+     * - MRVariable 
+       -   
+       - 
+       - 
+     
+     * - ConditionalVariable 
+       -   
+       - 
+       - 
+     
+     * - FilterVariable 
+       -   
+       - 
+       - 
+     
+     * - MathematicalVariable 
+       -   
+       - 
+       - 
+     
+     * - DateTimeVariable 
+       -   
+       - 
+       - 
+     
+     * - UploadedNumericVariable 
+       -   
+       - 
+       - 
+     
+
+  
+
+
+
 .. _AnyVariableValue:
 
 AnyVariableValue
@@ -20969,6 +21780,11 @@ AnyVariableValue
        - 
      
      * - WeightValue 
+       -   
+       - 
+       - 
+     
+     * - GridValue 
        -   
        - 
        - 
