@@ -178,7 +178,7 @@ Accounts
                
           # Example of usage
 
-          account = api.Accounts.retrieve(account_id="56b949a7edde478fa337bae36180983a")
+          account = api.Accounts.retrieve(account_id="d714260fbd8f45f59fe8bd8443ff9c84")
 
           print(account.id)
           print(account.name),
@@ -187,7 +187,7 @@ Accounts
           # or just
 
           print(
-              api.Accounts.retrieve("56b949a7edde478fa337bae36180983a").name
+              api.Accounts.retrieve("d714260fbd8f45f59fe8bd8443ff9c84").name
           )
           
     
@@ -224,7 +224,7 @@ Accounts
                
           # Example of usage
           account = api.Accounts.modify(
-              account_id="c1212162daf3445198f6bd5263decb6f",
+              account_id="78567ffccc2047da88343a927269c239",
               model={
                   "name": "new name of account",
               }
@@ -268,7 +268,7 @@ Accounts
                
           # Example: Works with `cmix` type partners only
           token = api.Accounts.get_user_tokens(
-              user_id="52aab912d84449deb5edcf105e9ee826"
+              user_id="01af9e6f1a19463295678bfe19b8d5f8"
           )
           print(tokens.access_token)
           print(tokens.refresh_token)
@@ -314,7 +314,7 @@ Accounts
           # Example
           import uuid
 
-          cmix_account = "1495d8e237ab435b8fe509d4f2cd333f"
+          cmix_account = "0521d917ec4a4ad48bdd4c29fd23c7fa"
           access_token = str(uuid.uuid4())
           refresh_token = str(uuid.uuid4())
 
@@ -364,7 +364,7 @@ Accounts
           from bravado.exception import HTTPNotFound
 
           # Check that tokens exists
-          user_id="4982a6d81baf4ada99d08a91b63ad818"
+          user_id="c37df4fa4064473a8d23108810fa3669"
           tokens = api.Accounts.get_user_tokens(user_id=<user_id)
           if tokens:
               api.Accounts.delete_user_tokens(user_id=user_id)
@@ -793,12 +793,12 @@ Charts
                
           # Example 1: getting all chart nme from the dataset
 
-           for chart in api.Charts.list(dataset_id="596518aa3bf44be89951da1f30645c8d").items:
+           for chart in api.Charts.list(dataset_id="830b3cd47c24464399fa6ab8b29d86e7").items:
               print(chart.id)
               print(chart.name)
 
           # Example 2: check if chart with name `some name` exists in the dataset
-           if api.Charts.list(dataset_id="596518aa3bf44be89951da1f30645c8d", name="some name").items:
+           if api.Charts.list(dataset_id="830b3cd47c24464399fa6ab8b29d86e7", name="some name").items:
               # Do something here
               pass
           
@@ -870,7 +870,7 @@ Charts
                
           # Example
           updated_chart = api.Charts.modify(
-              chart_id="0f953622654e4a2298d7e889834f144d",
+              chart_id="6842844615f64a1fae61b7516c08e298",
               model={"description": "Some description"}
           )
           print(updated_chart.description)
@@ -914,7 +914,7 @@ Charts
 
                
           # Example
-          chart = api.Charts.retrieve(chart_id="837c30b51935426d8182200d060c419d")
+          chart = api.Charts.retrieve(chart_id="2c5f83ecdd944b288d08ad8d980ff9a0")
 
           # do some changes with the chart
           chart.description = "NEW DESCRIPTION"
@@ -1026,7 +1026,7 @@ Charts
 
                
           # Example
-          definition = api.Charts.get_definition(chart_id="8e04652a69554fbd994e18d9608c4fbb")
+          definition = api.Charts.get_definition(chart_id="0990aeaa2a8049f1bee0f6fffa52d57e")
 
           
     
@@ -1065,7 +1065,7 @@ Charts
 
                
           # Example
-          definition = api.Charts.get_definition(chart_id="28213f46fbeb496ca852c50b95f59f53")
+          definition = api.Charts.get_definition(chart_id="220b2b74b3184eb0b6d8026405304585")
           
     
 
@@ -1154,7 +1154,7 @@ Crosstabs
 
                
           Example:
-          crosstabs = api.Crosstabs.list(dataset_id="e11f9ba25a4b4a4aa7b88d44f5aca5b0").items
+          crosstabs = api.Crosstabs.list(dataset_id="ba25c2af1c384039987e21af7ddbb6df").items
           for crostab in crosstabs:
               print(crosstab.id)
               print(crosstab.name)
@@ -1198,7 +1198,7 @@ Crosstabs
 
           # copy definition
           definition = api.Crosstabs.get_definition(
-              crosstab_id="5b94c5a7a0834523a353a02f5a35c969"
+              crosstab_id="c939a7c79139441dadccf9b835d136b3"
           )
           # build new model
           model =  model = {
@@ -1209,7 +1209,7 @@ Crosstabs
               "category": "Demographics",
           }
           crosstab = api.Crosstabs.create(
-              dataset_id="737249900f8e4c698b2d3ad4e55e75cc",
+              dataset_id="d5d45b53b2df4b728cabfc1f1b7f493d",
               model=model
           )
 
@@ -1256,7 +1256,7 @@ Crosstabs
                
           # Example: change crosstab's description
           crosstab = api.Crosstabs.modify(
-              crosstab_id="2d23e1fb1f704c1f9e5a1a7a48e007b6",
+              crosstab_id="25dd47e33bae4acab3e3c3dad477e83e",
               model={"description": "new description"}
           )
 
@@ -1333,9 +1333,9 @@ Crosstabs
                
           # Example
           async_job = api.Crosstabs.delete(
-              account_id="a6adfae8d75a454bb72b74a9b7b0b7fb",
-              dataset_id="acc6ebb8a7464397868dc7d0cc8a0b7d",
-              crosstab_id="3d48819c0af24fe286a1592d4150ad99"
+              account_id="ecf7ede1e4584048a6696f008644cde3",
+              dataset_id="b66de217e5dd43dab015753ca74541c1",
+              crosstab_id="32659535f7934a8185a0b260278a17da"
           )
           # Wait until job will be done (job.result should be "succeeded")
           job = api.helper.wait_until(
@@ -1382,7 +1382,7 @@ Crosstabs
 
                
           # Example
-           crosstab = api.Crosstabs.retrieve(crosstab_id="fa99f384af044d0fb9ab9033c6460a96")
+           crosstab = api.Crosstabs.retrieve(crosstab_id="3438fefd36e340efb264efd6839d801e")
            print(crosstab.id)
            print(crosstab.name)
 
@@ -1424,7 +1424,7 @@ Crosstabs
                
           # Example:
           definition = api.Crosstabs.get_definition(
-              crosstab_id="09d008d67bff4d4c8bf80ac81a6dd5a9"
+              crosstab_id="e6821871e3ff43c2a14bf205fa350749"
           )
           print (definition.description)
           
@@ -1468,7 +1468,7 @@ Crosstabs
                
           # Example: Change `includeEmpty` attribute to opposite value
 
-          crosstab_id = "b9e67cce90bb46ef85eea250d66693be"
+          crosstab_id = "f6ea43b8eb52420b8ef9762d98b8f896"
 
           definition = api.Crosstabs.get_definition(
               crosstab_id=crosstab_id
@@ -1585,7 +1585,7 @@ Crosstabs
           # example 1: get result asynchronously
 
           async_job = api.Crosstabs.calculate(
-              crosstab_id="117a65a4f7ac463d9593439307061171",
+              crosstab_id="2a81e5b6f8104b378aafb3d45d6bd4fc",
               model={
                   "format": "json",
                   "preferSync": False
@@ -1658,7 +1658,7 @@ Dashboards
 
                
           # Example
-          for dashboard in api.Dashboards.list(account_id="4dd79a339d8340549aa5b63039331e8f").items:
+          for dashboard in api.Dashboards.list(account_id="262c37a9b45f49c8aa0e96ee87349d02").items:
               print(dashboard.name)
           
     
@@ -1718,7 +1718,7 @@ Dashboards
          :linenos:
 
                
-          dashboard = api.Dashboards.retrieve(dashboard_id="4a3f13da2e28426897cfbcbe72e60816")
+          dashboard = api.Dashboards.retrieve(dashboard_id="c5d8769e753643b5b56bf915a84c9c3e")
           print(dashboard.name)
           
     
@@ -1807,7 +1807,7 @@ Dashboards
 
                
           # Example: delete all dashboards in account
-          api.Dashboards.delete(dashboard_id="5b17f080d4fd4e01b105204d731eaf7e")
+          api.Dashboards.delete(dashboard_id="5232f0f960a84888978bc67879a6aceb")
           
     
 
@@ -1950,7 +1950,7 @@ Dashboards
 
                
           # Example
-          async_res = api.Dashboards.copy(dashboard_id="6c500df0b2dd4c4b9f1f6ac34e36a347")
+          async_res = api.Dashboards.copy(dashboard_id="8be1dfb7defd4f46b50249d06b2e2f05")
 
           # wait until job will be completed
           job = api.helper.wait_until(
@@ -2051,7 +2051,7 @@ Data_Sources
 
                
           # print all available `DataSource`_ for account
-          for ds in api.Data_Sources.list(account_id="a38f741f522942dbbb92069b5581534a").items:
+          for ds in api.Data_Sources.list(account_id="0934d89aebcf43a2890d4ba20900b100").items:
               print(ds.id, ds.description)
           
     
@@ -2091,7 +2091,7 @@ Data_Sources
           ds = api.Data_Sources.create(
               account_id="-",
               model= {
-                  "account": "504a465752c54089ad9878aa169d9230",
+                  "account": "537e6eb70e9842a19399212a391b09cb",
                   "name": "Example name:Data_Sources.create",
                   "description": "Example description:Data_Sources.create",
                   "enabled": True,
@@ -2136,7 +2136,7 @@ Data_Sources
          :linenos:
 
                
-          ds = api.Data_Sources.retrieve(data_source_id="3c15a0ed7bef48cba1014c09a1e8b129")
+          ds = api.Data_Sources.retrieve(data_source_id="2172a469cdb0459b9a89da3359f0b2e7")
           print(ds.description)
           
     
@@ -2197,10 +2197,10 @@ Data_Sources
 
                
           #  Example 1: of deleting
-          api.Data_Sources.delete(account_id="-", data_source_id="6928a6a5793548f1937ef473124c3981")
+          api.Data_Sources.delete(account_id="-", data_source_id="963c6536bdac47a9b8752a2058e8c88c")
 
           # Example2: Remove all DataSources from account
-          for ds in api.Data_Sources.list("6da2409686044450a6e01008f6839709").items:
+          for ds in api.Data_Sources.list("13e4089a91544eefa5cb0a494b8e1b3f").items:
               api.Data_Sources.delete(data_source_id=ds.id)
           
     
@@ -2255,7 +2255,7 @@ Data_Views
 
                
           # Example: get all `DataViews` available for `DataSet`
-          for dv in api.Data_Views.list(dataset_id="95579449804e48c9be51ce9c22266846").items:
+          for dv in api.Data_Views.list(dataset_id="109a28b58e574918bdd241c36608adb2").items:
               print(dv)
           
     
@@ -2351,7 +2351,7 @@ Data_Views
          :linenos:
 
                
-          data_view =  api.Data_Views.retrieve(dataview_id="72ffa5f5143b4ea390bbabf30f1ad782")
+          data_view =  api.Data_Views.retrieve(dataview_id="9d299a7f327247ab87bd4d9248537524")
           print(data_view)
           
     
@@ -2395,7 +2395,7 @@ Data_Views
           Example: Update description only
 
           updated_data_view = api.Data_Views.modify(
-              dataview_id="13736aee99574adcb55c5693d2609eb2",
+              dataview_id="7763a107770e4f49844f5b2f0af1b744",
               model: {"description": "TEST_DESCRIPTION"}
           )
 
@@ -2441,7 +2441,7 @@ Data_Views
 
                
           # Example: Update the description but send all information about the
-          data_view_id="93f240cd81784651a61ce07ff036848b"
+          data_view_id="e79de5bc02834906a5e334ffdfa26c24"
 
           dv = api.Data_Views.retrieve(dataview_id=data_view_id)
 
@@ -2490,7 +2490,7 @@ Data_Views
 
                
           # Example: get all DataDiews definitions for particular DataSet
-          for data_view in api.Data_Views.list(dataset_id="d22ba3455f3b4e6e9e9226f9f1b4fc32").items:
+          for data_view in api.Data_Views.list(dataset_id="4e87ca0c24e9402ab3399e75a6f01982").items:
                definition = api.Data_Views.get_definition(
                   dataview_id=data_view.id
                )
@@ -2605,7 +2605,7 @@ Data_Views
           import pathlib
 
           async_job = api.Data_Views.export(
-              dataview_id="f101d7be3d584fc2add6f2c8d08c77b7",
+              dataview_id="3d9d1c169ef044fdbbbfddce3afd66bd",
               model={
                   "format": "excel",
                   "preferSync": False,
@@ -2696,7 +2696,7 @@ Datasets
            _async_job = api.Datasets.create(
               model=dict(
                   folderPath=["test_folder", "sub_folder"],
-                  account="fddb08bc582540dda14f98eb8ab55eea",
+                  account="8bb47666f73340bf937e8ecb74318417",
               ),
               data=open("data_file.csv", "rb"),
            )
@@ -2732,7 +2732,7 @@ Datasets
          :linenos:
 
                
-          for ds in api.Datasets.list(account_id="dc8b8685456a431ca8cf6886868e3581").items:
+          for ds in api.Datasets.list(account_id="d1eb189bed6f485bb2a02fdc2fd9865e").items:
               print (ds.id)
               print (ds.name)
           
@@ -2768,7 +2768,7 @@ Datasets
          :linenos:
 
                
-          data_set = api.Datasets.retrieve(dataset_id="4ffc27d4ee5d4b3cbea8e02402aacab9")
+          data_set = api.Datasets.retrieve(dataset_id="1ce488ec3e124a10ba461e49900823f4")
           print(data_set.id)
           print(data_set.name)
           
@@ -2819,7 +2819,7 @@ Datasets
 
                
           # Example move `DataSet` into new folder
-          dataset_id = "3379f781eb574f6596c2d5bf4f1d397b"
+          dataset_id = "df942601351d4ea8bbde5c51f3fdec57"
           data_set = api.Datasets.modify(
               dataset_id=dataset_id,
               model={"folderPath": ["new folder", ["new sub-folder"]]}
@@ -2870,7 +2870,7 @@ Datasets
 
                
           # Examples
-          dataset_id="9507f9557338407192eaaf5d81599c8d"
+          dataset_id="ca5a3b299d034d7c8f328943c75cc43f"
 
           dataset = api.Datasets.retrieve(dataset_id=dataset_id)
           dataset.description = "modified description"
@@ -2916,7 +2916,7 @@ Datasets
 
                
           # Example
-          async_job = api.Datasets.delete(dataset_id="ca7fdbeaa0aa4c3b8c8cf4bb1665bb3f")
+          async_job = api.Datasets.delete(dataset_id="4be00fece99d4dbd8a70afe6d17b31f6")
           
     
 
@@ -2955,11 +2955,11 @@ Datasets
          :linenos:
 
                
-          destination_account_id = "97557b744ddc449980c3b0579ed6b8f8"
+          destination_account_id = "c24abc1efa954087a1cfa92c7bcef3c4"
 
           async_job = api.Datasets.copy(
               account_id="-",
-              dataset_id="98e0a2d813e745beacdc38b41f725187",
+              dataset_id="a3dd7d10ca99408983eb4e1f9a4b08e2",
               model={
                   "destinationAccount": destination_account_id,
                   "folderPath": ["test", "dataset_copies"],
@@ -3107,7 +3107,7 @@ Datasets
          :linenos:
 
                
-          permissions = api.Datasets.get_permissions(dataset_id="38bf3a19c44b4a7b990d7cd9c1fca12d")
+          permissions = api.Datasets.get_permissions(dataset_id="73605916292847eda13415bd7fce5bd7")
           print(permissions)
           
     
@@ -3146,11 +3146,11 @@ Datasets
 
                
           # Example
-           new_owner = "5c4a0f700cf34e5bab5d761073b65c9a"
-           dataset_id = "129899ec313241f5b7a03adc6dbbe936"
+           new_owner = "d5fbea6ad24d4e829db150ad3aae6d10"
+           dataset_id = "42c89529e9e046679ab8bb98bda85746"
 
             result = api.Datasets.patch_permissions(
-              dataset_id="129899ec313241f5b7a03adc6dbbe936",
+              dataset_id="42c89529e9e046679ab8bb98bda85746",
               model={"owner": user.id}
           )
 
@@ -3191,8 +3191,8 @@ Datasets
 
                
           # Example
-           new_owner = "c962394c86264c808b644cc7447794a9"
-           dataset_id = "2951c797954c4d3894bc3b7911ae9a86"
+           new_owner = "82bc801bdf154298a4901a4eb9a48fd6"
+           dataset_id = "71207fb5404a4d2e9ec90dd3c35e68dc"
 
            result = api.Datasets.put_permissions(
               account_id=account,
@@ -3311,8 +3311,8 @@ Datasets
 
                
           api.Datasets.delete_group_permission(
-              dataset_id="aa7066fda5114065b4d1e66e372b8a14",
-              group_id="964580c87e9d4e5da5fa99f0a9ef4b3c"
+              dataset_id="476375299fbf486cb4594976335ece01",
+              group_id="46c38128ca054f59bdb6a060e55d5140"
           )
           
     
@@ -3381,7 +3381,7 @@ Datasets
           # Example
           import random
 
-          dataset_id = "323f1840685c4553a4de21bdf2432ddb"
+          dataset_id = "f07e3186ec7146979887cf6132627137"
 
           # Getting random  user (associated with the current partner)
           assocs = api.Partners.get_user_associations(partner_id=client_id)
@@ -3498,7 +3498,7 @@ Datasets
 
                
           # Check that dataset is in status `ready`
-          dataset_id = "dd25dd27bc504b1ea0c737292c279d3f"
+          dataset_id = "d9495359ebed4d7395635c78b8c4f8c1"
           if api.Datasets.retrieve(dataset_id=dataset_id).status == 'ready':
               async_job = api.Datasets.export(dataset_id=dataset_id)
 
@@ -3618,7 +3618,7 @@ Datasets
 
                
           # Example
-          result = api.Datasets.get_messages(dataset_id="d8041436051543af93e013655c4e4ead")
+          result = api.Datasets.get_messages(dataset_id="0ed29a49767146c7b6706dfa77066911")
           print(result)
           
     
@@ -3651,7 +3651,7 @@ Datasets
 
                
           # Example
-          metadata= api.Datasets.get_metadata(dataset_id="fcb6081608744afa8bdab0e31a2bbae2")
+          metadata= api.Datasets.get_metadata(dataset_id="529982cd4cb94e4cbfbeaecf46788d1d")
           print(metadata)
           
     
@@ -3743,7 +3743,7 @@ Files
           model = dict(
               folderPath=["uploaded"],
               name="Uploaded file",
-              account="d64b6c4f4c0e4333b3c52be5d34351ef",
+              account="788175e39faf4eb39bf2a82399c006ce",
               description="Some file description",
           )
 
@@ -3788,7 +3788,7 @@ Files
                
           # Example:
 
-          file =  api.Files.retrieve(file_id="56df9432fcd649718c26de689970cd3d")
+          file =  api.Files.retrieve(file_id="b7f22750cae34f42a4cb1756fd5fdecd")
 
           print(file.id)
           print(file.description)
@@ -3829,7 +3829,7 @@ Files
                model=dict(
                    folderPath=["test"],
                    name="Some file name",
-                   account="7afea2daaa4648fdb91779757590aa0f",
+                   account="6c13091f9f644980aa59ac1a1a38562d",
                    description="Some file description",
                ),
                data=open("some_file.txt", "rb"),
@@ -3878,7 +3878,7 @@ Files
 
                
            file = api.Files.modify(
-              file_id="8943dede604a45b7aed4be277546e9c3",
+              file_id="16a69067882341a5aabd514db316dbc6",
               model={"name": "new file name"}
           )
 
@@ -3942,7 +3942,7 @@ Files
                
           # Example:
 
-          async_job = api.Files.copy(file_id="b9bc1de1ca35425282dae655cf0f20bb")
+          async_job = api.Files.copy(file_id="c15fa84e2f864184a4e37f1716339b9d")
 
           # Wait until job.result will return "succeeded"
 
@@ -3989,7 +3989,7 @@ Files
 
                
           # Example
-          permissions = api.Files.get_permissions(file_id="1aac90953ffc41e8af9d1d1077b98262")
+          permissions = api.Files.get_permissions(file_id="69d054100e4c42c0beba94000b6e9b50")
           print(permissions)
           
     
@@ -4112,7 +4112,7 @@ Files
 
                
           # Example: Will change the `full` permission to `view` for some group
-          file_id = "0e7c9be45fac4e9cb1cb5dff9552d741"
+          file_id = "e1ddb09d0788421f98b0b030eb5f41a8"
            group_permissions = api.Files.get_group_permissions(
               file_id=file.id
           )
@@ -4334,7 +4334,7 @@ Injected_Scripts
          :linenos:
 
                
-          account_id= "c0eb8bb768e14e8d9da5d407c135dac7"
+          account_id= "dc190e3642524e21bc65922b3d9a9d92"
           result = api.Injected_Scripts.list(account_id=account_id)
           for injection_script in result.items:
               print (injection_script.name)
@@ -4405,8 +4405,8 @@ Injected_Scripts
          :linenos:
 
                
-          account_id= "6315eee1bf7d40fba15343d17bfaed6d"
-          injection_script_id = "3c254b647abd41568efbe5cbb9943a1e"
+          account_id= "7a073248199e4c3d8780a9fe38201b3c"
+          injection_script_id = "2c4ba27e3183451bb880111a2c5d8dd0"
 
           result = api.Injected_Scripts.retrieve(
               account_id=account_id,
@@ -4452,8 +4452,8 @@ Injected_Scripts
 
                
           str_private_key = <YOUR PRIVATE KEY>
-          account_id = "5ff51aac304b4fa1a15d7431debd31f6"
-          injected_script_id = "eddac856b708401986da48dad0045a0c"
+          account_id = "5f53643ca0814f9cbfa4b2aa388f09f6"
+          injected_script_id = "5f5facf28dc248228e9fcb05edcd1d1a"
           new_js_code = "debugger; // updated code"
 
           private_key = ecdsa.SigningKey.from_der(
@@ -4505,7 +4505,7 @@ Injected_Scripts
          :linenos:
 
                
-          injection_script_id = "7002a3b902d442c987376ee054d74f87"
+          injection_script_id = "266cff8d6aec4cc3b35161b5a775b359"
           api.Injected_Scripts.delete(injected_script_id=injection_script_id)
           
     
@@ -5293,12 +5293,12 @@ Partners
           # Example 1: get partner to account associations by  external_id of account
           result = api.Partners.get_account_associations(
               partner_id="-",
-              externalAccount="d8ca24d36bda4cb69d854317738a56ce"
+              externalAccount="89d36ca6c2974bf2a868d5e987fe770a"
           )
           print (result.items)
 
           # Example 2: get all accounts associated with the partner
-          result = api.Partners.get_account_associations(partner_id="f14eb379fa9146398e43ac0f8fe2b13c")
+          result = api.Partners.get_account_associations(partner_id="00c4b825b0d14393a91442a7fee50729")
           for item in result.items:
               print (item.account)
           
@@ -5337,8 +5337,8 @@ Partners
           # Example:
 
           assoc = api.Partners.get_account_association(
-              partner_id="581ec76479cb47a1b87923a523504592",
-              account_id="144dd211de4240f08bb9bc5ea0074146"
+              partner_id="d86ad4f085df44cbbac2cc5b9b352746",
+              account_id="0d89a44203584c02890b154af21f2578"
           )
           print (assoc)
           
@@ -5537,7 +5537,7 @@ Partners
 
           for user in api.Users.list(account_id=account).items:
               association = api.Partners.get_user_association(
-                  partner_id="ea67ff74a0d84415a65009812872724d",
+                  partner_id="e03c85349887471dac473a949fee0469",
                   user_id=user.id
               )
               print(f"user_id={user.id}, externalId={association.externalId}")
@@ -5629,8 +5629,8 @@ Partners
                
           # Example
           api.Partners.delete_user_association(
-              partner_id="64bdc70d4b26448888704b927d7e0569",
-              user_id="0ea6190a1fc3465380273abbfb615560"
+              partner_id="4bbd6de4bf1a4eacbdb379f23b4e0e53",
+              user_id="dc6a0c6467d941eeb1468a399cd32504"
           )
           
     
@@ -5824,12 +5824,12 @@ Users
 
                
           # Example
-          for user in api.Users.list(account_id="f189938d7601442b9dd429d37b6781ae").items:
+          for user in api.Users.list(account_id="70be3bcfed1941f3a9d875325a2911a0").items:
               print(user.firstName, user.email)
 
           # Find user by username or Email
           result = api.Users.list(
-              account_id="f189938d7601442b9dd429d37b6781ae",
+              account_id="70be3bcfed1941f3a9d875325a2911a0",
               usernameOrEmail="some@email.com",
           )
           if result.count > 0:
@@ -5838,7 +5838,7 @@ Users
 
           # find user by `username` only
             result = api.Users.list(
-              account_id="f189938d7601442b9dd429d37b6781ae", username="test_username"
+              account_id="70be3bcfed1941f3a9d875325a2911a0", username="test_username"
           )
           if result.items:
               user = result.items[0]
@@ -5882,7 +5882,7 @@ Users
                
           # example
           user = api.Users.create(
-              account_id="e006d7bb13654a99a3fd6099bd430ed7",
+              account_id="49a1c0b61e3b489caaff131be2d9bd98",
               model={
                   "password": "d868701d-6c26-422d-a2cf-ae9a9af1905e",
                   "userName": "username_test",
@@ -5928,7 +5928,7 @@ Users
          :linenos:
 
                
-          user = api.Users.retrieve(user_id="fc0f04012d5a4e8199cb6fe7d7e9479f")
+          user = api.Users.retrieve(user_id="f41ba479dcb84402b9c056a64646744a")
           print(user.id, user.firstName, user.email)
           
     
@@ -5967,7 +5967,7 @@ Users
 
                
           # Example 1: update first name for user
-          user_id = "12402e41a2d6433bbc29036b386396eb"
+          user_id = "fd1900d25cd6455f83663c797381bcc7"
           user = api.Users.retrieve(user_id=user_id)
           user.firstName = "NewFistName"
 
@@ -6012,7 +6012,7 @@ Users
           # Getting all administered account(s) for some user
           print (
               api.Users.get_administered_accounts(
-                  user_id="6e59fe72d51e417a9f2efc3942aefb9e"
+                  user_id="5af89f8488c24f0b9180e5512c428a45"
               ).items
           )
           
@@ -6051,7 +6051,7 @@ Users
           # Getting all administered account(s) for some user
           print (
               api.Users.get_administered_accounts(
-                  user_id="1ff0bebe96c9419fa3a36f3df72c52f1"
+                  user_id="a4e47a3e94ce47a98a073c3425a558ad"
               ).items
           )
           
@@ -6234,7 +6234,7 @@ Variables
                
           # Example
           for category in api.Variables.get_categories(
-              dataset_id="0e146708ebac44feb3971484cc591aa5"
+              dataset_id="1d2d22c3d3334742ab64d0466c2063bc"
           ).items:
               print(
                   category.id,
@@ -6279,7 +6279,7 @@ Variables
 
                
           # Example
-          dataset_id="4495337860184433a46de923c9d01971"
+          dataset_id="8ddeb45907dd407bbe6bb5ef72004c52"
           result = api.Variables.post_category(
               model=dict(
                   dataset=dataset_id,
@@ -6325,7 +6325,7 @@ Variables
 
           import secrets
 
-          dataset = "e5e681b80832408ab0f7069a159404ec"
+          dataset = "11b35b6edb7e48149efbb4156f40cc1a"
 
           category = api.Variables.post_category(
               model=dict(
@@ -6386,7 +6386,7 @@ Variables
                
           # Example: check if category exists with the name "test_category"
           result = api.Variables.get_category(
-              dataset_id="eb189e86c3004f33b721793f56bddb33",
+              dataset_id="af565d45d508455e9a360de9f6d9b743",
               category_name="test_category"
           )
           if result:
@@ -6433,7 +6433,7 @@ Variables
                
           # Example: change the description and name in `test_category`
           updated_category = api.Variables.patch_category(
-              dataset_id="39dc107144554a8982456da5cc05df00",
+              dataset_id="8997b70338be417d9abd34274ee4a572",
               category_name="test_category",
               model=dict(
                   description="new description for category",
@@ -6508,7 +6508,7 @@ Variables
                
           # Example
           api.Variables.delete_category(
-              dataset_id="049faefc8f404cd085410f0e6ce8a249",
+              dataset_id="33ed8379a45546728f80d4190ce21c6b",
               category_name="some_test_category_name"
           )
           
@@ -6549,7 +6549,7 @@ Variables
                
           # Example: get list of variables related to `category_name`
           result = api.Variables.get_category_variables(
-              dataset_id="5ae56f58a9be4369accb168ba6bbc980",
+              dataset_id="8e4615c7d1164dbeb5b8c66a58e86d02",
               category_name="category_name"
           )
           for variable in result.items:
@@ -6589,7 +6589,7 @@ Variables
 
                
           # Example
-           for variable in api.Variables.list(dataset_id="80287a0b03be4a9a91905f6ddfdbf9cd").items:
+           for variable in api.Variables.list(dataset_id="e00744d5243d4be6832f574c4342bfaf").items:
               print(variable.code)
           
     
@@ -6629,7 +6629,7 @@ Variables
                
           # Example: create variable
 
-          dataset_id="2228d934949f4dde8ca38abb1b752641"
+          dataset_id="31681677dd75495fb427db4cfa79318e"
           variable = api.Variables.create(
               dataset_id=dataset_id,
               model=dict(
@@ -6682,7 +6682,7 @@ Variables
                
           # Example: remove variables with code "CSLTestVariable1", "CSLTestVariable2"
           api.Variables.delete_variables(
-              dataset_id="74527738eee94d44ab9abe881c55c189",
+              dataset_id="cf0cf595998b4276aeaee5bd6b9426e3",
               model=dict(variables=["CSLTestVariable1", "CSLTestVariable2"])
           )
           
@@ -6767,7 +6767,7 @@ Variables
                
           # Example
           api.Variables.delete(
-              dataset_id="8b684bb212704c3292ed96970b845c4b",
+              dataset_id="184d44340ae94961802966d15182e01e",
               variable_code="ExampleVariable"
           )
           
@@ -6816,7 +6816,7 @@ Variables
                
           # Example: change the `label` of variable
           variable = api.Variables.modify(
-              dataset_id="008aac4ae84a44759919d08778453df0",
+              dataset_id="43babf8fedbd4d98875f365e4bce9e4f",
               variable_code="CSLTestVariable",
               model={
                   'label': "new label text"
@@ -7116,7 +7116,7 @@ Variables
 
                
           #Example:
-          print (api.Variables.get_grid_sets(dataset_id="81fa1796c4aa4eea91a9ec2eef998f52"))
+          print (api.Variables.get_grid_sets(dataset_id="ee1e4ea98765457e86a493d036f109bc"))
           
     
 
@@ -12797,10 +12797,25 @@ ChartCalculationRequest
        -  required 
        - 
      
+     * - bulkExportRows 
+       - boolean  
+       -  required 
+       - 
+     
+     * - bulkExportColumns 
+       - boolean  
+       -  required 
+       - 
+     
      * - customTemplate 
        - string  
        - 
        - Custom template name 
+     
+     * - bulkExportFilter 
+       - string  
+       - 
+       - 
      
 
   
@@ -13936,6 +13951,11 @@ CrosstabDefinitionColumnSection
        - 
        - Collection of columns included in the Section. 
      
+     * - aggregateColumns 
+       - list  of  `AggregateColumn`_
+       - 
+       - Collection of aggregate columns included in the Section. 
+     
 
   
 
@@ -14371,6 +14391,93 @@ DefinitionColumnHeaderCell
        - 
        - Variable Code 
      
+
+  
+
+
+
+.. _AggregateColumn:
+
+AggregateColumn
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
+
+  
+
+  .. list-table::
+     :widths: auto
+     :header-rows: 1
+
+     * - Name
+       - Type
+       - Info
+       - Description
+     
+     * - name 
+       - string  
+       - 
+       - 
+     
+     * - calculations 
+       - list  of  `AggregateCalculation`_
+       - 
+       - 
+     
+
+  
+
+
+
+.. _AggregateCalculation:
+
+AggregateCalculation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
+
+  
+
+  .. list-table::
+     :widths: auto
+     :header-rows: 1
+
+     * - Name
+       - Type
+       - Info
+       - Description
+     
+     * - calculation 
+       -   
+       -  required 
+       - 
+     
+     * - formula 
+       - string  
+       - 
+       - 
+     
+     * - name 
+       - string  
+       - 
+       - 
+     
+     * - omit 
+       - boolean  
+       - 
+       - 
+     
+
+  
+
+
+
+.. _CrosstabCalculation:
+
+CrosstabCalculation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  
 
   
 
@@ -18882,6 +18989,11 @@ DatasetCopy
        - list  
        - 
        - Folder path of the target destination. 
+     
+     * - name 
+       - string  
+       - 
+       - 
      
 
   
